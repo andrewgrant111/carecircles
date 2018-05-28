@@ -1,5 +1,5 @@
 {
-  "name": "Support Circle REST",
+  "name": "Support-Circle-REST",
   "version": "1.0.0",
   "description": "Helping Patients give consent to ",
   "main": "server.js",
