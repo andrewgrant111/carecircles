@@ -9,6 +9,16 @@ var bodyParser = require("body-parser");
 //var nodemailer = require('nodemailer');
 var router = express.Router();
 
+var app = express();
+app.use(express.static(__dirname + "/public"));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }))
+
+var server = app.listen(process.env.PORT || 80, function () {
+  var port = server.address().port;
+  console.log("App now running on port", port);
+});
+
 // var auth = function (req, res, next) {
 //   function unauthorized(res) {
 //     res.set('WWW-Authenticate', 'Basic realm=Authorization Required');
@@ -30,10 +40,7 @@ var router = express.Router();
 
 // var DRUGS_COLLECTION = "drugs";
 
-var app = express();
-app.use(express.static(__dirname + "/public"));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }))
+
 // app.use(cookieParser());
 // app.use(session({secret: authCreds.secret}))
 
