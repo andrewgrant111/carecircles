@@ -1,7 +1,7 @@
 {
-  "name": "VISIONREST",
+  "name": "Support Circle REST",
   "version": "1.0.0",
-  "description": "Helping Patients with Post Transplant Care",
+  "description": "Helping Patients give consent to ",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
