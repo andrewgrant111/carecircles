@@ -2,7 +2,7 @@
 ------------------------------------
 	Labs - Design Studio
 	Version: 1.0
- ------------------------------------ 
+ ------------------------------------
  ====================================*/
 
 
@@ -484,7 +484,7 @@ ul {
 	-webkit-transform: translateY(50%);
 	    -ms-transform: translateY(50%);
 	        transform: translateY(50%);
-	margin-top: -90px;
+	margin-top: 50px;
 }
 
 .intro-video img {
