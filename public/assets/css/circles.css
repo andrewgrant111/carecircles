@@ -1,27 +1,34 @@
-.extended-circle {
-	border-radius: 50%;
-	background-color: blue;
+.circles-box {
+  overflow: hidden;
   height: 500px;
-  width: 500px;
+  width: 250px;
+}
+
+.extended-circle {
+	border-radius:  0px 250px 250px 0px;
+	background-color: #10475D;
+  height: 500px;
+  width: 250px;
+  margin: auto auto;
+  position: absolute;
 }
 
 .outer-circle {
-	border-radius: 50%;
-	background-color: green;
-  height: 400px;
-  width: 400px;
+	border-radius:  0px 175px 175px 0px;
+	background-color: #0797C1;
+  height: 350px;
+  width: 175px;
+  margin: auto auto;
+  position: absolute;
+  top: 75px;
 }
 
 .inner-circle {
-	border-radius: 50%;
-  background-color: red;
-  height: 300px;
-  width: 300px;
-}
-
-.patient-circle {
-	border-radius: 50%;
-  background-color: grey;
+	border-radius:  0px 100px 100px 0px;
+  background-color: #F58A41;
   height: 200px;
-  width: 200px;
+  width: 100px;
+  margin: auto auto;
+  position: absolute;
+  top: 75px;
 }
