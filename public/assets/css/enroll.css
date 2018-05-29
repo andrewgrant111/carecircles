@@ -6,6 +6,7 @@ h1 {
 h3 {
   font-size: 22px;
   text-align: left;
+  margin-bottom: 22px;
 }
 
 hr {
@@ -18,8 +19,8 @@ div.instructions {
 }
 
 .enrollsearchdiv {
-  margin-top: 36px;
-  margin-bottom: 36px;
+  margin-top: 18px;
+  margin-bottom: 18px;
 }
 
 .enrollsearch {
@@ -51,7 +52,7 @@ label {
   background-color: #fafafa;
   overflow-y: scroll;
   padding: 18px 36px;
-  margin: 18px 0;
+  margin: 18px 0 36px 0;
 }
 
 .terms.expand {
@@ -60,4 +61,14 @@ label {
 
 .terms.shrink {
   height: 150px;
+}
+
+#OpenImgUpload {
+  height: 150px;
+  width: 150px;
+  border-radius: 100%;
+  background-color: #d8d8d8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
