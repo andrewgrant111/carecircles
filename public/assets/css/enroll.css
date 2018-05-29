@@ -1,0 +1,13 @@
+.terms {
+  background-color: #fafafa;
+  overflow-y: hidden;
+  padding: 1em 2em;
+}
+
+.terms.expand {
+  height: auto;
+}
+
+.terms.shrink {
+  height: 150px;
+}

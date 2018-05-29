@@ -12,7 +12,7 @@
 html,
 body {
 	height: 100%;
-	font-family: "Raleway", sans-serif;
+	font-family: "Helvetica", sans-serif;
 }
 
 img {
@@ -35,7 +35,7 @@ h2 {
 }
 
 p {
-	font-size: 15px;
+	font-size: 18px;
 	color: #6c6e7e;
 	line-height: 30px;
 	font-family: "Raleway", sans-serif;
@@ -52,6 +52,16 @@ li,
 ul {
 	margin: 0;
 	padding: 0;
+}
+
+nav {
+	font-size: 24px;
+	letter-spacing: 1.5px;
+  color: #4a4a4a;
+}
+
+nav > li {
+	
 }
 
 /*------------------------
