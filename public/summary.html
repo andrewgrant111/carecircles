@@ -29,7 +29,7 @@
       </div>
     </nav>
     <div class="container mt100">
-      <h2>Summary of your Circles</h2>
+      <h1>Summary of your Circles</h1>
       <div class="panel-body">
         <p class="explanation">Here is an overview of everyone in your circles.</p>
       </div>
@@ -41,24 +41,24 @@
       <div class="row">
         <div class="col-sm-4 col-sm-offset-0 circlesheaderdiv">
           <img src="/assets/img/InnerCircle.png" class="columnimage" />
-          <h3>Inner Circle</h3>
+          <h2>Inner Circle</h2>
           <div class="graybackground cards" id="inner-members">
           </div>
         </div>
         <div class="col-sm-4 col-sm-offset-0 circlesheaderdiv">
           <img src="/assets/img/OuterCircle.png" class="columnimage" />
-          <h3>Outer Circle</h3>
+          <h2>Outer Circle</h2>
           <div class="graybackground cards" id="outer-members">
           </div>
         </div>
         <div class="col-sm-4 col-sm-offset-0 circlesheaderdiv">
           <img src="/assets/img/ExtendedCircle.png" class="columnimage" />
-          <h3>Extended Circle</h3>
+          <h2>Extended Circle</h2>
           <div class="graybackground cards" id="extended-members">
           </div>
         </div>
       </div>
-      <div class="row text-center mb100">
+      <div class="row text-center mt20 mb100">
         <a href="" class="site-btn">Edit</a>
         <a href="" class="site-btn">Looks Good</a>
       </div>
@@ -74,9 +74,9 @@
           data["inner"].forEach(innerMember => {
             cards++;
             var card = '<div class="card" id="card'+cards+'"> \
-                <div class="card-img"><img src="assets/img/02.jpg" alt="user" class="img-circle"></div> \
+                <div class="card-img"><img src="assets/img/susie.png" alt="user" class="img-circle"></div> \
                   <div class="card-content"> \
-                    <div class="card-name"></div> \
+                    <div class="card-name1"></div> \
                     <div class="card-relationship">My </div> \
                     <hr> \
                     <p class="card-phone">Phone: </p> \
@@ -86,7 +86,7 @@
 
             $("#inner-members").append(card);
             console.log($("#card"+cards))
-            $("#card"+cards+" .card-name").append(innerMember.name);
+            $("#card"+cards+" .card-name1").append(innerMember.name);
             $("#card"+cards+" .card-email").append(innerMember.email);
             $("#card"+cards+" .card-phone").append(innerMember.phone);
             $("#card"+cards+" .card-relationship").append(innerMember.relationship);
@@ -94,9 +94,9 @@
           data["outer"].forEach(outerMember => {
             cards++;
             var card = '<div class="card" id="card'+cards+'"> \
-                <div class="card-img"><img src="assets/img/02.jpg" alt="user" class="img-circle"></div> \
+                <div class="card-img"><img src="assets/img/george.png" alt="user" class="img-circle"></div> \
                   <div class="card-content"> \
-                    <div class="card-name"></div> \
+                    <div class="card-name2"></div> \
                     <div class="card-relationship">My </div> \
                     <hr> \
                     <p class="card-phone">Phone: </p> \
@@ -105,7 +105,7 @@
                 </div>';
 
             $("#outer-members").append(card);
-            $("#card"+cards+" .card-name").append(outerMember.name);
+            $("#card"+cards+" .card-name2").append(outerMember.name);
             $("#card"+cards+" .card-email").append(outerMember.email);
             $("#card"+cards+" .card-phone").append(outerMember.phone);
             $("#card"+cards+" .card-relationship").append(outerMember.relationship);
@@ -113,9 +113,9 @@
           data["extended"].forEach(extendedMember => {
             cards++;
             var card = '<div class="card" id="card'+cards+'"> \
-                <div class="card-img"><img src="assets/img/02.jpg" alt="user" class="img-circle"></div> \
+                <div class="card-img"><img src="assets/img/barry.png" alt="user" class="img-circle"></div> \
                   <div class="card-content"> \
-                    <div class="card-name"></div> \
+                    <div class="card-name3"></div> \
                     <div class="card-relationship">My </div> \
                     <hr> \
                     <p class="card-phone">Phone: </p> \
@@ -124,7 +124,7 @@
                 </div>';
 
             $("#extended-members").append(card);
-            $("#card"+cards+" .card-name").append(extendedMember.name);
+            $("#card"+cards+" .card-name3").append(extendedMember.name);
             $("#card"+cards+" .card-email").append(extendedMember.email);
             $("#card"+cards+" .card-phone").append(extendedMember.phone);
             $("#card"+cards+" .card-relationship").append(extendedMember.relationship);

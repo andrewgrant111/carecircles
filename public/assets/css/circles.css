@@ -51,27 +51,25 @@
   background-color: #10475D;
 }
 
-h2 {
+h1 {
   font-family: Helvetica;
   font-size: 28px;
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
   line-height: normal;
-  letter-spacing: 2.2px;
   text-align: center;
   color: #000000;
   /*-webkit-text-stroke: 1px #979797;*/
 }
 
-h3 {
+h2 {
   font-family: Helvetica;
   font-size: 22px;
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
   line-height: normal;
-  letter-spacing: 2.2px;
   text-align: center;
   color: #000000;
 }

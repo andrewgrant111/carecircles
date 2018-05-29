@@ -24,14 +24,14 @@
       </div>
     </nav>
     <div class="container mt100">
-      <h2>Add family, friends and neighbors to your circles!</h2>
-      <div class="panel-body">
-        <p class="explanation">For each of your circles, add the people in your life whom you wish to have access to your information.</p>
+      <h1>Add family, friends and neighbors to your circles!</h1>
+      <div class="panel-body text-center">
+        <p>For each of your circles, add the people in your life whom you wish to have access to your information.</p>
       </div>
       <div class="row">
         <div class="col-md-6">
-          <h3>My Circles</h3>
-          <p id="circle-explanation" class="explanation">By default, my inner circle has permissions to see my medication, diagnosis, symptoms, diet, exercise, appointments, and transport.</p>
+          <h2>My Circles</h2>
+          <p id="circle-explanation">By default, my inner circle has permissions to see my medication, diagnosis, symptoms, diet, exercise, appointments, and transport.</p>
           <div class="circles-box">
             <div class="extended-circle">
               <div class="outer-circle">
@@ -43,7 +43,8 @@
         </div>
 
         <div class="col-md-6">
-          <h3 id="circle-panel-header">Members of My Inner Circle</h3>
+          <h2 id="circle-panel-header">Members of My Inner Circle</h2>
+          <br>
           <div class="add-button-panel">
             <a href="" class="site-btn" id="add-member-btn">Add Someone to My Inner Circle</a>
           </div>
@@ -106,7 +107,7 @@
     <script src="assets/js/bootstrap.min.js"></script>
     <script type="text/javascript">
     var card = '<div class="card"> \
-        <div class="card-img"><img src="assets/img/02.jpg" alt="user" class="img-circle"></div> \
+        <div class="card-img"><img src="assets/img/user.png" alt="user" class="img-circle"></div> \
           <div class="card-content"> \
             <div class="card-name"></div> \
             <div class="card-relationship">My </div> \
@@ -115,22 +116,6 @@
             <p class="card-email">Email: </p> \
           </div> \
         </div>';
-      // '<div class="card"> \
-      //    <div class="card-body"> \
-      //      <div class="card-img"> \
-      //        <img src="assets/img/02.jpg" alt="user" class="img-circle"> \
-      //      </div> \
-      //      <div class="card-content"> \
-      //        <h3 class="card-name"></h3> \
-      //        <p class="card-phone">Phone:</p> \
-      //        <p class="card-email">Email:</p> \
-      //        <p class="card-relationship">Relationship:</p> \
-      //      </div> \
-      //    </div> \
-      //    <div class="card-footer"> \
-      //      <a href="" class="site-btn" id="edit-member">Edit</a> \
-      //    </div> \
-      //  </div>';
       $(document).ready(function(){
         var circle = 1;
         $("#add-member-btn").click(function(e){

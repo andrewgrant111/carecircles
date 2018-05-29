@@ -32,11 +32,11 @@ h6 {
 }
 
 h1 {
-  font-size: 36px;
+  font-size: 28px;
 }
 
 h2 {
-	font-size: 24px;
+	font-size: 22px;
 }
 
 p {
@@ -291,9 +291,30 @@ a.navbar-brand > img {
   text-transform: uppercase;
   font-size: 24px;
   font-weight: 700;
+  color: #000000;
+}
+
+
+.card .card-name1 {
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: 700;
   color: #e78f51;
 }
 
+.card .card-name2 {
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: 700;
+  color: #4697be;
+}
+
+.card .card-name3 {
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: 700;
+  color: #22485d;
+}
 .card .card-rel {
 }
 
