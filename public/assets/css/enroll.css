@@ -32,6 +32,7 @@ label {
   background-color: #fafafa;
   overflow-y: hidden;
   padding: 1em 2em;
+  margin: 1em 0;
 }
 
 .terms.expand {
