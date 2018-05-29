@@ -50,3 +50,64 @@
 .extended-circle.extended-color {
   background-color: #10475D;
 }
+
+h2 {
+  font-family: Helvetica;
+  font-size: 36px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 2.2px;
+  text-align: center;
+  color: #000000;
+  /*-webkit-text-stroke: 1px #979797;*/
+}
+
+.explanation {
+  font-family: Helvetica;
+  font-size: 24px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 1.5px;
+  text-align: center;
+  color: #4a4a4a;
+}
+
+#add-member-btn {
+  border: solid 2px #979797;
+  font-family: Helvetica;
+  font-size: 24px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 1.5px;
+  text-align: center;
+  color: #e78f51;
+  background-color: white;
+  text-transform: capitalize;
+}
+
+#nextbutton {
+  margin: 0 10%;
+  background-color: #4697be;
+  height: 60px;
+  font-family: Helvetica;
+  font-size: 18px;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 1.5px;
+  text-align: center;
+  color: #ffffff;
+  border-radius: 0px;
+  margin: 0px 0px 50px 0;
+  width: 80%;
+}
+
+div.next {
+  text-align: center;
+}
