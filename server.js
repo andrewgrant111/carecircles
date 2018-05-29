@@ -150,6 +150,12 @@ var patients = [{
   "gender": "Female"
 }];
 
+var circleMembers = [{
+  "inner": [],
+  "outer": [],
+  "extended": []
+}]
+
 var enrolledPatients = [];
 
 app.post("/enroll", function(req,res) {
@@ -169,6 +175,24 @@ app.get("/patients", function(req,res) {
     }
   });
   res.status(400).send("Patient not found with this PHN");
+});
+
+app.post("/circlemembers/inner", function(req,res) {
+  //circleMembers["inner"].push(req.body);
+  console.log(req.body);
+  res.status(200).send("Test");
+});
+
+app.post("/circlemembers/outer", function(req,res) {
+  circleMembers["outer"].push(req.body);
+});
+
+app.post("/circlemembers/extended", function(req,res) {
+  circleMembers["extended"].push(req.body);
+});
+
+app.get("/circlemembers", function(req,res) {
+  res.status(200).json(circleMembers);
 });
 
 app.post("/update", function(req,res) {
