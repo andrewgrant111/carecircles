@@ -192,6 +192,12 @@ app.get("/patients", function(req,res) {
   res.status(400).send("Patient not found with this PHN");
 });
 
+
+app.post("/patients", function(req,res){
+  console.log(req.body);
+  res.status(200).send();
+});
+
 app.post("/circlemembers/inner", function(req,res) {
   circleMembers["inner"].push(req.body);
   console.log(req.body);
@@ -257,8 +263,4 @@ app.post("/sms", function(req,res){
       from: process.env.TWILIO_PHONE // From a valid Twilio number
   })
   .then((message) => console.log(message.sid));
-});
-
-app.post("/patients/new", function(req,res){
-  req.body
 });

@@ -91,13 +91,13 @@
             <a href="/disagree.html" class="btn btn-danger form-control">Disagree</a>
           </div>
           <div class="col-sm-6 col-md-2 col-md-offset-2">
-            <button type="submit" class="btn btn-primary form-control">Agree</button><br />
+            <button id="agreebutton" class="btn btn-primary form-control">Agree</button><br />
           </div>
         </div>
       </form>
     </div>
     <div>
-      <div class="bottom-padding" style="height:200px">&nbsp;</div>
+      <div class="bottom-padding" style="height:60px">&nbsp;</div>
     </div>
     <footer>
       <script src="assets/js/jquery-2.1.4.min.js"></script>
@@ -109,6 +109,7 @@
       <script>
 
       $(document).ready(function() {
+
         $("#searchbutton").click(function(e) {
           e.preventDefault();
           const grabPatient = document.querySelector('#phn').value;
@@ -134,6 +135,29 @@
             }
           });
         });
+
+        $(document).ready(function() {
+          $("#agreebutton").click(function(e) {
+            e.preventDefault();
+            console.log("test");
+            const grabPatient = document.querySelector('#phn').value;
+            $.ajax({
+              type: "POST",
+              url: `patients`,
+              data: {
+                phone: $('#phone').val(),
+                email: $('#email').val()
+              },
+              success: function(result) {
+                window.location.href = "configure.html";
+              },
+              error: function(result) {
+                alert('error');
+              }
+            });
+          });
+        });
+
       });
       </script>
     </footer>
