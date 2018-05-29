@@ -66,16 +66,6 @@
             </div><!-- .modal-dialog -->
           </div><!-- .modal -->
           <div id='cards' class="cards">
-            <div class="card">
-                <div class="card-img"><img src="assets/img/02.jpg" alt="user" class="img-circle"></div>
-                <div class="card-content">
-                  <div class="card-name">Susie Gartner</div>
-                  <div class="card-rel">My Daughter</div>
-                  <hr>
-                  <p>Phone:</p>
-                  <p>Email:</p>
-                </div>
-            </div>
           </div>
           <div class="next">
             <button id="nextbutton" class="btn btn-default">Next</button>
@@ -93,21 +83,32 @@
     <script type="text/javascript">
 
     var card = '<div class="card"> \
-       <div class="card-body"> \
-         <div class="card-img"> \
-           <img src="assets/img/02.jpg" alt="user" class="img-circle"> \
-         </div> \
-         <div class="card-content"> \
-           <h3 class="card-name"></h3> \
-           <p class="card-phone">Phone:</p> \
-           <p class="card-email">Email:</p> \
-           <p class="card-relationship">Relationship:</p> \
-         </div> \
-       </div> \
-       <div class="card-footer"> \
-         <a href="" class="site-btn" id="edit-member">Edit</a> \
-       </div> \
-     </div>';
+        <div class="card-img"><img src="assets/img/02.jpg" alt="user" class="img-circle"></div> \
+          <div class="card-content"> \
+            <div class="card-name"></div> \
+            <div class="card-relationship">My </div> \
+            <hr> \
+            <p class="card-phone">Phone: </p> \
+            <p class="card-email">Email: </p> \
+          </div> \
+        </div>';
+      //
+      // '<div class="card"> \
+      //    <div class="card-body"> \
+      //      <div class="card-img"> \
+      //        <img src="assets/img/02.jpg" alt="user" class="img-circle"> \
+      //      </div> \
+      //      <div class="card-content"> \
+      //        <h3 class="card-name"></h3> \
+      //        <p class="card-phone">Phone:</p> \
+      //        <p class="card-email">Email:</p> \
+      //        <p class="card-relationship">Relationship:</p> \
+      //      </div> \
+      //    </div> \
+      //    <div class="card-footer"> \
+      //      <a href="" class="site-btn" id="edit-member">Edit</a> \
+      //    </div> \
+      //  </div>';
 
       $(document).ready(function(){
         var circle = 1;

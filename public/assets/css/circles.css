@@ -111,3 +111,18 @@ h2 {
 div.next {
   text-align: center;
 }
+
+.cards {
+  display: block;
+  text-align: left;
+}
+
+.cards .card {
+  width: 100%;
+  display: inline-block;
+}
+
+.cards .card .card-img {
+  float: left;
+  width: auto;
+}
