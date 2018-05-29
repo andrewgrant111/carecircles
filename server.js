@@ -154,13 +154,18 @@ app.post("/enroll", function(req,res) {
   enrolledPatients.push(req.body);
 });
 
-app.get("/patients/:phn", function(req,res) {
+var test = {"test1":"test2"};
+
+app.get("/test", function(req,res) {
+  res.status(200).json(test);
+});
+
+app.get("/patients", function(req,res) {
   patients.forEach(patient => {
-    if (patient.phn == req.params.phn){
+    if (patient.phn == req.query.phn){
       res.status(200).json(patient);
     }
   });
-
   res.status(400).send("Patient not found with this PHN");
 });
 
