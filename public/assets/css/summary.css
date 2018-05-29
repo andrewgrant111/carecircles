@@ -4,9 +4,6 @@
 
 .graybackground {
   background-color: #fafafa;
-}
-
-.graycolumn {
   width: 100%;
   text-align: center;
   padding-left: 10px;
@@ -18,9 +15,8 @@ img.columnimage {
   min-width: 150px;
 }
 
-.circlemembercard {
+.summary-card {
   background-color: #ffffff;
-  width: 100%;
-  margin: 5px;
+  margin: 15px 0;
   box-shadow: 2px 2px 5px #eaeaea;
 }

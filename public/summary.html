@@ -24,41 +24,22 @@
         Thank you for setting up your Care Circles, Edna. Here is your summary.
       </div>
       <div class="row">
-        <div class="col-md-4 col-md-offset-0 circlesheaderdiv">
+        <div class="col-sm-4 col-sm-offset-0 circlesheaderdiv">
           <img src="/assets/img/InnerCircle.png" class="columnimage" />
           <h3>INNER</h3>
+          <div class="graybackground" id="inner-members">
+          </div>
         </div>
-        <div class="col-md-4 col-md-offset-0 circlesheaderdiv">
+        <div class="col-sm-4 col-sm-offset-0 circlesheaderdiv">
           <img src="/assets/img/OuterCircle.png" class="columnimage" />
           <h3>OUTER</h3>
+          <div class="graybackground" id="outer-members">
+          </div>
         </div>
-        <div class="col-md-4 col-md-offset-0 circlesheaderdiv">
+        <div class="col-sm-4 col-sm-offset-0 circlesheaderdiv">
           <img src="/assets/img/ExtendedCircle.png" class="columnimage" />
           <h3>EXTENDED</h3>
-        </div>
-      </div>
-      <div class="graybackground">
-        <div class="row">
-          <div class="col-md-4 col-md-offset-0 graycolumn">
-            <div class="circlemembercard">
-              Frank
-            </div>
-          </div>
-          <div class="col-md-4 col-md-offset-0 graycolumn">
-            <div class="circlemembercard">
-              Frank
-            </div>
-          </div>
-          <div class="col-md-4 col-md-offset-0 graycolumn">
-            <div class="circlemembercard">
-              Frank
-            </div>
-            <div class="circlemembercard">
-              Frank
-            </div>
-            <div class="circlemembercard">
-              Frank
-            </div>
+          <div class="graybackground" id="extended-members">
           </div>
         </div>
       </div>
@@ -75,5 +56,89 @@
   	<script src="assets/js/owl.carousel.min.js"></script>
   	<script src="assets/js/circle-progress.min.js"></script>
   	<script src="assets/js/main.js"></script>
+    <script>
+      var cards = 0;
+
+
+      $(document).ready(function(){
+        $.get("/circlemembers", function(data) {
+          data["inner"].forEach(innerMember => {
+            cards++;
+            var card = '<div class="summary-card" id="card'+ cards +'"> \
+             <div class="card-body"> \
+               <div class="card-img"> \
+                 <img src="assets/img/02.jpg" alt="user" class="img-circle"> \
+               </div> \
+               <div class="card-content"> \
+                 <h3 class="card-name"></h3> \
+                 <p class="card-phone">Phone:</p> \
+                 <p class="card-email">Email:</p> \
+                 <p class="card-relationship">Relationship:</p> \
+               </div> \
+             </div> \
+             <div class="card-footer"> \
+               <a href="" class="site-btn" id="edit-member">Edit</a> \
+             </div> \
+           </div>';
+            $("#inner-members").append(card);
+            console.log($("#card"+cards))
+            $("#card"+cards+" .card-name").append(innerMember.name);
+            $("#card"+cards+" .card-email").append(innerMember.email);
+            $("#card"+cards+" .card-phone").append(innerMember.phone);
+            $("#card"+cards+" .card-relationship").append(innerMember.relationship);
+          });
+          data["outer"].forEach(outerMember => {
+            cards++;
+            var card = '<div class="summary-card" id="card'+ cards +'"> \
+             <div class="card-body"> \
+               <div class="card-img"> \
+                 <img src="assets/img/02.jpg" alt="user" class="img-circle"> \
+               </div> \
+               <div class="card-content"> \
+                 <h3 class="card-name"></h3> \
+                 <p class="card-phone">Phone:</p> \
+                 <p class="card-email">Email:</p> \
+                 <p class="card-relationship">Relationship:</p> \
+               </div> \
+             </div> \
+             <div class="card-footer"> \
+               <a href="" class="site-btn" id="edit-member">Edit</a> \
+             </div> \
+           </div>';
+            $("#outer-members").append(card);
+            $("#card"+cards+" .card-name").append(outerMember.name);
+            $("#card"+cards+" .card-email").append(outerMember.email);
+            $("#card"+cards+" .card-phone").append(outerMember.phone);
+            $("#card"+cards+" .card-relationship").append(outerMember.relationship);
+          });
+          data["extended"].forEach(extendedMember => {
+            cards++;
+            var card = '<div class="summary-card" id="card'+ cards +'"> \
+             <div class="card-body"> \
+               <div class="card-img"> \
+                 <img src="assets/img/02.jpg" alt="user" class="img-circle"> \
+               </div> \
+               <div class="card-content"> \
+                 <h3 class="card-name"></h3> \
+                 <p class="card-phone">Phone:</p> \
+                 <p class="card-email">Email:</p> \
+                 <p class="card-relationship">Relationship:</p> \
+               </div> \
+             </div> \
+             <div class="card-footer"> \
+               <a href="" class="site-btn" id="edit-member">Edit</a> \
+             </div> \
+           </div>';
+            $("#extended-members").append(card);
+            $("#card"+cards+" .card-name").append(extendedMember.name);
+            $("#card"+cards+" .card-email").append(extendedMember.email);
+            $("#card"+cards+" .card-phone").append(extendedMember.phone);
+            $("#card"+cards+" .card-relationship").append(extendedMember.relationship);
+          });
+
+          //alert("Load was performed.");
+        });
+      });
+    </script>
   </footer>
 </html>
