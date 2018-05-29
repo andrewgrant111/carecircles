@@ -10,15 +10,38 @@
     <link rel="stylesheet" href="/assets/css/circles.css">
   </head>
   <body>
+    <header>
+      <!-- Page Preloder -->
+      <!-- Navigation -->
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="/"><img alt="logo" src="assets/img/logo2-navbar.png"></a>
+          </div>
+          <ul class="nav navbar-nav">
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="circles.html">My Circles</a></li>
+            <li><a href="permissions.html">Permissions</a></li>
+            <li><a href="">Help</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
     <div class="container">
       <h2>Add family, friends and neighbors to your circles!</h2>
       <div class="panel-body">
-        <p class="explanation">Circles circles circles circles circles circles circles circles circles circles circles circles circles circles circles circles circles</p>
+        <p class="explanation">For each of your circles, add the people in your life whom you wish to have access to your information.</p>
       </div>
       <div class="row">
         <div class="col-md-6">
+<<<<<<< HEAD
           <h3>My Circles</h3>
           <p id="circle-explanation" class="explanation">Circle explanations go here blah blah blah blah blah blah</p>
+=======
+          <h2>My Circles</h2>
+          <p id="circle-explanation" class="explanation">By default, my inner circle has permissions to see my medication, diagnosis, symptoms, diet, exercise, appointments, and transport.</p>
+>>>>>>> origin/master
           <div class="circles-box">
             <div class="extended-circle">
               <div class="outer-circle">
@@ -184,14 +207,14 @@
             $(".outer-circle").addClass("outer-color");
             $("#cards").empty();
             $("#circle-panel-header").text("Members of My Outer Circle");
-            $("#circle-explanation").text("Outer circle explanation blah blah blah blah");
+            $("#circle-explanation").text("By default, my outer circle has permissions to see my diet, exercise, appointments, and transport.");
             circle++;
           } else if (circle == 2){
             $(".outer-circle").removeClass("outer-color");
             $(".extended-circle").addClass("extended-color");
             $("#cards").empty();
             $("#circle-panel-header").text("Members of My Extended Circle");
-            $("#circle-explanation").text("Extended circle explanation blah blah blah blah");
+            $("#circle-explanation").text("By default, my inner circle has permissions to see my appointments, and transport.");
             circle++
           } else if (circle == 3){
             window.location.href = 'summary.html';
