@@ -145,7 +145,9 @@ var patients = [{
   "phn": "9000123456",
   "name": "Edna Gartner",
   "phoneNumber": "(778) 876-5432",
-  "address": "123 Evergreen Terrace, Vancouver, BC"
+  "address": "123 Evergreen Terrace, Vancouver, BC",
+  "dob": "June 1, 1948"
+  "gender": "Female"
 }];
 
 var enrolledPatients = [];
