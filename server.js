@@ -152,21 +152,21 @@ var patients = [{
 
 var circleMembers = {
   "inner": [{
-    "name": "Seymour Skinner",
+    "name": "Susie Skinner",
     "phone": "(604) 604-0406",
-    "email": "seymour.skinner@geocities.com",
-    "relationship": "Son"
+    "email": "susie.skinner@geocities.com",
+    "relationship": "Daughter"
     }],
   "outer": [{
-      "name": "Marge Simpson",
+      "name": "George Simpson",
       "phone": "(604) 222-2222",
-      "email": "marge.simpson@yahoo.com",
+      "email": "george.simpson@yahoo.com",
       "relationship": "Neighbour"
     }],
   "extended": [{
-      "name": "Super Nintendo Chalmers",
+      "name": "Barry Chalmers",
       "phone": "(778) 778-7788",
-      "email": "super.nintendo@altavista.com",
+      "email": "barry.chalmers@altavista.com",
       "relationship": "Friend"
   }]
 };
