@@ -200,16 +200,23 @@ app.post("/patients", function(req,res){
 
 app.post("/circlemembers/inner", function(req,res) {
   circleMembers["inner"].push(req.body);
+  console.log("POST /circlemembers/inner");
   console.log(req.body);
-  //res.status(200).send();
+  res.status(200).send();
 });
 
 app.post("/circlemembers/outer", function(req,res) {
   circleMembers["outer"].push(req.body);
+  console.log("POST /circlemembers/outer")
+  console.log(req.body);
+  res.status(200).send();
 });
 
 app.post("/circlemembers/extended", function(req,res) {
   circleMembers["extended"].push(req.body);
+  console.log("POST /circlemembers/extended")
+  console.log(req.body);
+  res.status(200).send();
 });
 
 app.get("/circlemembers", function(req,res) {
