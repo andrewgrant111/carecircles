@@ -150,11 +150,11 @@ var patients = [{
   "gender": "Female"
 }];
 
-var circleMembers = [{
+var circleMembers = {
   "inner": [],
   "outer": [],
   "extended": []
-}]
+};
 
 var enrolledPatients = [];
 
@@ -178,7 +178,7 @@ app.get("/patients", function(req,res) {
 });
 
 app.post("/circlemembers/inner", function(req,res) {
-  //circleMembers["inner"].push(req.body);
+  circleMembers["inner"].push(req.body);
   console.log(req.body);
   res.status(200).send("Test");
 });
