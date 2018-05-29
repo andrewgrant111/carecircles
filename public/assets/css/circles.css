@@ -1,0 +1,27 @@
+.extended-circle {
+	border-radius: 50%;
+	background-color: blue;
+  height: 500px;
+  width: 500px;
+}
+
+.outer-circle {
+	border-radius: 50%;
+	background-color: green;
+  height: 400px;
+  width: 400px;
+}
+
+.inner-circle {
+	border-radius: 50%;
+  background-color: red;
+  height: 300px;
+  width: 300px;
+}
+
+.patient-circle {
+	border-radius: 50%;
+  background-color: grey;
+  height: 200px;
+  width: 200px;
+}
