@@ -42,7 +42,7 @@
                     <h3 class="modal-title">Add Member</h3>
                   </div>
                   <div class="modal-body">
-                    <form class="form" action="/circlemembers/inner" role="form" method="POST" >
+                    <form id="new-member-form" class="form" action="/circlemembers/inner" role="form" method="POST" >
                       <div class="form-group">
                         <label for="name">Name</label>
                         <input class="form-control" type="text" name="name" placeholder="" required="required">
@@ -90,16 +90,16 @@
            <img src="assets/img/02.jpg" alt="user" class="img-circle"> \
          </div> \
          <div class="card-content"> \
-           <h3>Susie Gartner</h3> \
-           <p>Phone:</p> \
-           <p>Email:</p> \
-           <p>Relationship:</p> \
+           <h3 class="card-name"></h3> \
+           <p class="card-phone">Phone:</p> \
+           <p class="card-email">Email:</p> \
+           <p class="card-relationship">Relationship:</p> \
          </div> \
        </div> \
        <div class="card-footer"> \
          <a href="" class="site-btn" id="edit-member">Edit</a> \
        </div> \
-     </div>"';
+     </div>';
 
       $(document).ready(function(){
         $("#add-member-btn").click(function(e){
@@ -108,11 +108,19 @@
             $("#add-member").modal();
         });
         $("#submit-member-btn").click(function(e){
-
+          var name = $("input[name=name]").val();
+          var phone = $("input[name=phone]").val();
+          var email = $("input[name=email]").val();
+          var relationship = $("input[name=relationship]").val();
+          $("#new-member-form")[0].reset();
           $("#add-member").modal('hide');
-          $("form.form").reset();
+          //$("form.form").reset();
           $("#cards").append(card);
-          //e.preventDefault();
+          $(".card-name").last().append(name);
+          $(".card-phone").last().append(phone);
+          $(".card-email").last().append(email);
+          $(".card-relationship").last().append(relationship);
+          e.preventDefault();
         });
 
 
