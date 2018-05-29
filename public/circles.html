@@ -12,68 +12,60 @@
   <body>
     <h2>Set Up Circles</h2>
     <div class="row">
-      <div class="panel panel-default col-md-6">
+      <div class="col-md-6">
         <div class="circles-box">
           <div class="extended-circle">
             <div class="outer-circle">
-              <div class="inner-circle">
+              <div class="inner-circle inner-color">
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="panel panel-default col-md-6">
-        <!--<div class="jumbotron jumbotron-inner">-->
-          <h1>Inner Circle</h1>
-        <!--</div>-->
-        <!--<div class="content">
-          <div class="container">-->
-            <!--<div class="row mt70 text-center">-->
-              <div class="col-xs-4 col-xs-offset-4">
-                  <a href="" class="site-btn" id="add-member-btn">Add Member</a>
+      <div class="col-md-6">
+        <h1 id="circle-panel-header">Inner Circle</h1>
+        <a href="" class="site-btn" id="add-member-btn">Add Member</a>
+        <div class="modal fade" id="add-member" role="dialog">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h3 class="modal-title">Add Member</h3>
               </div>
-            <!--</div>-->
-            <div class="modal fade" id="add-member" role="dialog">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h3 class="modal-title">Add Member</h3>
+              <div class="modal-body">
+                <form id="new-member-form" class="form" action="/circlemembers/inner" role="form" method="POST" >
+                  <div class="form-group">
+                    <label for="name">Name</label>
+                    <input class="form-control" type="text" name="name" placeholder="" required="required">
                   </div>
-                  <div class="modal-body">
-                    <form id="new-member-form" class="form" action="/circlemembers/inner" role="form" method="POST" >
-                      <div class="form-group">
-                        <label for="name">Name</label>
-                        <input class="form-control" type="text" name="name" placeholder="" required="required">
-                      </div>
-                      <div class="form-group">
-                        <label for="phone">Phone</label>
-                        <input class="form-control" type="text" name="phone" placeholder="" required="required">
-                      </div>
-                      <div class="form-group">
-                        <label for="email">Email</label>
-                        <input class="form-control" type="text" name="email" placeholder="" required="required">
-                      </div>
-                      <div class="form-group">
-                        <label for="relationship">Relationship</label>
-                        <input class="form-control" type="text" name="relationship" placeholder="">
-                      </div>
-                      <div class="modal-footer">
-                        <button id="submit-member-btn" type="submit" class="btn btn-default">Add New Member</button>
-                      </div>
-                    </form>
+                  <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input class="form-control" type="text" name="phone" placeholder="" required="required">
                   </div>
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input class="form-control" type="text" name="email" placeholder="" required="required">
+                  </div>
+                  <div class="form-group">
+                    <label for="relationship">Relationship</label>
+                    <input class="form-control" type="text" name="relationship" placeholder="">
+                  </div>
+                  <div class="modal-footer">
+                    <button id="submit-member-btn" type="submit" class="btn btn-default">Add New Member</button>
+                  </div>
+                </form>
+              </div>
 
-                </div><!-- .modal-content -->
-              </div><!-- .modal-dialog -->
-            </div><!-- .modal -->
-            <!--<div class="row mt70 text-center">-->
-                <div id='cards'>
-                </div>
-            <!--</div>-->
-          <!--</div>
-        </div>-->
+            </div><!-- .modal-content -->
+          </div><!-- .modal-dialog -->
+        </div><!-- .modal -->
+        <div id='cards' class="cards">
+        </div>
+        <div class="next">
+          <button id="nextbutton" class="btn btn-default">Next</button>
+        </div>
+
       </div>
     </div>
   </body>
@@ -102,30 +94,78 @@
      </div>';
 
       $(document).ready(function(){
+        var circle = 1;
+
         $("#add-member-btn").click(function(e){
           e.preventDefault();
           console.log("test");
             $("#add-member").modal();
         });
+
         $("#submit-member-btn").click(function(e){
-          var name = $("input[name=name]").val();
-          var phone = $("input[name=phone]").val();
-          var email = $("input[name=email]").val();
-          var relationship = $("input[name=relationship]").val();
-          $("#new-member-form")[0].reset();
-          $("#add-member").modal('hide');
-          //$("form.form").reset();
-          $("#cards").append(card);
-          $(".card-name").last().append(name);
-          $(".card-phone").last().append(phone);
-          $(".card-email").last().append(email);
-          $(".card-relationship").last().append(relationship);
           e.preventDefault();
+          console.log("submit member button pressed");
+
+          var urlPath = "";
+          if (circle == 1){
+            urlPath = '/circlemembers/inner';
+          } else if (circle == 2){
+            urlPath = '/circlemembers/outer';
+          } else if (circle == 3){
+            urlPath = '/circlemembers/extended';
+          }
+
+          var nameVal = $("input[name=name]").val();
+          var phoneVal = $("input[name=phone]").val();
+          var emailVal = $("input[name=email]").val();
+          var relationshipVal = $("input[name=relationship]").val();
+
+          $.ajax({
+            type: "POST",
+            url: urlPath,
+            data: {
+              name: nameVal,
+              phone: phoneVal,
+              email: emailVal,
+              relationship: relationshipVal
+            },
+            success: function(result) {
+              $("#new-member-form")[0].reset();
+              $("#add-member").modal('hide');
+              //$("form.form").reset();
+              $("#cards").append(card);
+              $(".card-name").last().append(nameVal);
+              $(".card-phone").last().append(phoneVal);
+              $(".card-email").last().append(emailVal);
+              $(".card-relationship").last().append(relationshipVal);
+              //window.location.href = "permissions.html";
+            },
+            error: function(result) {
+              alert('error');
+            }
+          });
         });
 
 
-
-
+        $("#nextbutton").click(function(e){
+          console.log("nextbutton");
+          if (circle == 1){
+            $(".inner-circle").removeClass("inner-color");
+            $(".outer-circle").addClass("outer-color");
+            $("#cards").empty();
+            $("#circle-panel-header").text("Outer Circle");
+            circle++;
+          } else if (circle == 2){
+            $(".outer-circle").removeClass("outer-color");
+            $(".extended-circle").addClass("extended-color");
+            $("#cards").empty();
+            $("#circle-panel-header").text("Extended Circle");
+            circle++
+          } else if (circle == 3){
+            window.location.href = 'summary.html';
+          }
+          e.preventDefault();
+        });
 
       });
     </script>
