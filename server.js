@@ -6,7 +6,7 @@ var bodyParser = require("body-parser");
 //var basicAuth = require('basic-auth');
 //var authCreds = require("./auth-creds.js");
 
-//var nodemailer = require('nodemailer');
+var nodemailer = require('nodemailer');
 var router = express.Router();
 
 var app = express();
@@ -141,12 +141,39 @@ var server = app.listen(process.env.PORT || 80, function () {
 //   });
 // });
 
-app.post("/test", function(req,res) {
-  console.log("test");
+var patients = [{
+  "phn": "9000123456",
+  "name": "Edna Gartner",
+  "phoneNumber": "(778) 876-5432",
+  "address": "123 Evergreen Terrace, Vancouver, BC"
+}];
+
+var enrolledPatients = [];
+
+app.post("/enroll", function(req,res) {
+  enrolledPatients.push(req.body);
 });
 
+var test = {"test1":"test2"};
 
-// app.post("/contact", function(req, res) {
+app.get("/test", function(req,res) {
+  res.status(200).json(test);
+});
+
+app.get("/patients", function(req,res) {
+  patients.forEach(patient => {
+    if (patient.phn == req.query.phn){
+      res.status(200).json(patient);
+    }
+  });
+  res.status(400).send("Patient not found with this PHN");
+});
+
+app.post("/update", function(req,res) {
+  patients.push(req.body);
+});
+//
+// app.post("/email", function(req, res) {
 //   // Contact Form send email using Zoho SMTP Server and NodeMailer
 //     var transporter = nodemailer.createTransport({
 //         service: 'Zoho',
@@ -157,20 +184,35 @@ app.post("/test", function(req,res) {
 //     });
 //
 //     var mailOptions = {
-//         from: 'info@emitcare.ca',
-//         replyTo: req.body.email,
-//         to: 'info@emitcare.ca', // list of receivers
-//         subject: 'EMIT Contact Form', // Subject line
-//         text: "From: " + req.body.name + "\nEmail: " + req.body.email + "\n\n" + req.body.message
+//         from: 'info@carecircles.ca',
+//         //replyTo: 'info@carecircles.ca',
+//         to: req.body.email, // list of receivers
+//         subject: 'Care Circles Info', // Subject line
+//         text: "Test Email"
 //     };
 //
 //     transporter.sendMail(mailOptions, function(error, info){
 //         if(error){
 //             // console.log(error);
-//             res.status(500).send("There was a problem sending the message. Please send email to info@emitcare.ca");
+//             res.status(500).send("There was a problem sending the message. Please send email to info@carecircles.ca");
 //         }else{
 //             // console.log('Message sent: ' + info.response);
 //             res.status(200).send("Message sent successfully, we will reply as soon as possible!");
 //         };
 //     });
 // });
+
+app.post("/sms", function(req,res){
+  var accountSid = process.env.TWILIO_SID; // Your Account SID from www.twilio.com/console
+  var authToken = process.env.TWILIO_TOKEN;   // Your Auth Token from www.twilio.com/console
+
+  var twilio = require('twilio');
+  var client = new twilio(accountSid, authToken);
+
+  client.messages.create({
+      body: 'Hello from Node',
+      to: req.body.phone,  // Text this number
+      from: process.env.TWILIO_PHONE // From a valid Twilio number
+  })
+  .then((message) => console.log(message.sid));
+});
