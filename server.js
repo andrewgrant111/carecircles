@@ -154,9 +154,9 @@ app.post("/enroll", function(req,res) {
   enrolledPatients.push(req.body);
 });
 
-app.get("/patients", function(req,res) {
+app.get("/patients/:phn", function(req,res) {
   patients.forEach(patient => {
-    if (patient.phn == req.body.phn){
+    if (patient.phn == req.params.phn){
       res.status(200).json(patient);
     }
   });
