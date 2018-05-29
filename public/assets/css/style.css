@@ -201,7 +201,6 @@ a.navbar-brand > img {
 	font-size: 24px;
 	color: #fff;
 	display: inline-block;
-	text-transform: uppercase;
 	padding: 15px 25px;
 	font-weight: 500;
 	letter-spacing: 1px;
@@ -216,7 +215,6 @@ a.navbar-brand > img {
   font-size: 24px;
   color: #fff;
   display: inline-block;
-  text-transform: uppercase;
   padding: 15px 25px;
   font-weight: 500;
 	letter-spacing: 1px;
@@ -231,7 +229,6 @@ a.navbar-brand > img {
   font-size: 24px;
   color: #000;
   display: inline-block;
-  text-transform: uppercase;
   padding: 15px 50px;
   font-weight: 400;
   letter-spacing: 1px;
