@@ -28,18 +28,18 @@
           <ul class="nav navbar-nav">
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="enroll.html" class="active">Enroll New Patient</a></li>
+            <li><a href="enroll.html">My Circles</a></li>
             <li><a href="permissions.html">Permissions</a></li>
             <li><a href="permissions.html">Help</a></li>
           </ul>
         </div>
       </nav>
     </header>
-    <div class="container mt70">
+    <div class="container mt100">
       <h1 class="text-center">Patient Enrollment Form</h1>
-      <div class="instructions">
+      <!-- <div class="instructions">
         Instructions
-      </div>
+      </div> -->
       <h3>1. Find Patient by Medical Care Plan Number (MCP, or Provincial Health Number)</h3>
       <form action="/patients" method="GET">
         <div class="form-group enrollsearchdiv">
@@ -77,7 +77,13 @@
           <input type="text" class="form-control" id="address" placeholder="Mailing Address">
         </div>
         <div>
-          <h3>2. Contact Info</h3>
+          <hr />
+          <h3>2. Add patient's photo and contact information</h3>
+        </div>
+        <div class="form-group">
+          <label for="profile_photo">Profile Photo</label>
+          <input type="file" id="profile_photo" style="display:none"/>
+          <div id="OpenImgUpload"><a href="" id="uploadtext">Upload from computer</a></div>
         </div>
         <div class="form-group">
           <label for="phone">Phone</label>
@@ -88,7 +94,8 @@
           <input type="email" class="form-control" id="email" placeholder="Email">
         </div>
         <div>
-          <h3>3. Agreement</h3>
+          <hr />
+          <h3>3. Review terms and conditions with patient and confirm consent</h3>
         </div>
         <div>
           <div class="terms shrink">
@@ -128,7 +135,9 @@
     	<script src="assets/js/circle-progress.min.js"></script>
     	<script src="assets/js/main.js"></script>
       <script>
+
       $(document).ready(function() {
+
         $("#searchbutton").click(function(e) {
           e.preventDefault();
           const grabPatient = document.querySelector('#phn').value;
@@ -154,6 +163,7 @@
             }
           });
         });
+
         $(document).ready(function() {
           $("#agreebutton").click(function(e) {
             e.preventDefault();
@@ -174,7 +184,14 @@
               }
             });
           });
+          $("#uploadtext").click(function(e) {
+            e.preventDefault();
+          })
+          $("#OpenImgUpload").click(function(e) {
+            $("#profile_photo").trigger('click');
+          })
         });
+
       });
       </script>
     </footer>
