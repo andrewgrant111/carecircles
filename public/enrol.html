@@ -27,7 +27,7 @@
               <input type="text" class="form-control" id="phn" name="phn" placeholder="Patient's Provincial Health Number">
             </div>
             <div class="col-6 col-md-2">
-              <button type="search" class="btn btn-primary form-control">Search</button>
+              <button type="search" class="btn btn-primary form-control" id="searchbutton">Search</button>
             </div>
           </div>
         </div>
@@ -106,6 +106,36 @@
     	<script src="assets/js/owl.carousel.min.js"></script>
     	<script src="assets/js/circle-progress.min.js"></script>
     	<script src="assets/js/main.js"></script>
+      <script>
+
+      $(document).ready(function() {
+        $("#searchbutton").click(function(e) {
+          e.preventDefault();
+          const grabPatient = document.querySelector('#phn').value;
+          $.ajax({
+            type: "GET",
+            url: `patients?phn=${grabPatient}`,
+            data: {
+              id: grabPatient,
+              // access_token: $("#access_token").val()
+            },
+            success: function(result) {
+              console.log(result);
+              const patientObject = result;
+              document.querySelector('#full_name').value = patientObject.name;
+              document.querySelector('#address').value = patientObject.address;
+              document.querySelector('#gender').value = patientObject.gender;
+              document.querySelector('#dob').value = patientObject.dob;
+              document.querySelector('#phone').value = patientObject.phoneNumber;
+              // alert('ok');
+            },
+            error: function(result) {
+              alert('error');
+            }
+          });
+        });
+      });
+      </script>
     </footer>
   </body>
 </html>

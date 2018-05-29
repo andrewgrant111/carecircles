@@ -1,17 +1,28 @@
 {
-  "name": "Support-Circle-REST",
+  "name": "support-circle",
   "version": "1.0.0",
-  "description": "Helping Patients give consent to ",
+  "description": "",
   "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "mongodb": "^2.1.19",
+    "nodemailer": "^2.4.2",
+    "twilio": "^3.17.1"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "dependencies": {
-    "body-parser": "^1.13.3",
-    "express": "^4.13.3",
-    "mongodb": "^2.1.6",
-    "basic-auth": "1.0.4",
-    "nodemailer": "2.4.2"
-  }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrewgrant111/support-circle.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrewgrant111/support-circle/issues"
+  },
+  "homepage": "https://github.com/andrewgrant111/support-circle#readme"
 }
