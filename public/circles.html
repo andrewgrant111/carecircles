@@ -13,11 +13,12 @@
     <div class="container">
       <h2>Add family, friends and neighbors to your circles!</h2>
       <div class="panel-body">
-        <p class="explanation">This is your settings page, use it to confirm of mofidy the permissions you want to grant to each circle. You can come back later to change this at any time</p>
+        <p class="explanation">Circles circles circles circles circles circles circles circles circles circles circles circles circles circles circles circles circles</p>
       </div>
       <div class="row">
         <div class="col-md-6">
           <h2>My Circles</h2>
+          <p id="circle-explanation" class="explanation">Circle explanations go here blah blah blah blah blah blah</p>
           <div class="circles-box">
             <div class="extended-circle">
               <div class="outer-circle">
@@ -30,7 +31,9 @@
 
         <div class="col-md-6">
           <h2 id="circle-panel-header">Members of My Inner Circle</h2>
-          <a href="" class="site-btn" id="add-member-btn">Add Someone to My Inner Circle</a>
+          <div class="add-button-panel">
+            <a href="" class="site-btn" id="add-member-btn">Add Someone to My Inner Circle</a>
+          </div>
           <div class="modal fade" id="add-member" role="dialog">
             <div class="modal-dialog">
               <div class="modal-content">
@@ -171,12 +174,14 @@
             $(".outer-circle").addClass("outer-color");
             $("#cards").empty();
             $("#circle-panel-header").text("Members of My Outer Circle");
+            $("#circle-explanation").text("Outer circle explanation blah blah blah blah");
             circle++;
           } else if (circle == 2){
             $(".outer-circle").removeClass("outer-color");
             $(".extended-circle").addClass("extended-color");
             $("#cards").empty();
             $("#circle-panel-header").text("Members of My Extended Circle");
+            $("#circle-explanation").text("Extended circle explanation blah blah blah blah");
             circle++
           } else if (circle == 3){
             window.location.href = 'summary.html';
