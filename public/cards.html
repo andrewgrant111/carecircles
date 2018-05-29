@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+  <title>Add To Your Network | Care Circles</title>
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="assets/css/font-awesome.min.css"/>
+</head>
+<body>
+  <div class="jumbotron jumbotron-inner">
+    <h1>Inner Circle</h1>
+  </div>
+  <div class="content">
+    <div class="container">
+      <div class="row mt70 text-center">
+        <div class="col-xs-4 col-xs-offset-4">
+            <a href="" class="site-btn" id="add-member">Add Member</a>
+        </div>
+      </div>
+      <div class="modal fade" id="add-member" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h3 class="modal-title">Add Member</h3>
+            </div>
+            <div class="modal-body">
+              <form class="form" action="" role="form" method="POST">
+                <div class="form-group">
+                  <div class="input-group">
+                    <input class="form-control" type="text" name="_name" placeholder="" required="required">
+                  </div>
+                  <div class="input-group">
+                    <input class="form-control" type="text" name="_phone" placeholder="" required="required">
+                  </div>
+                  <div class="input-group">
+                    <input class="form-control" type="text" name="_email" placeholder="" required="required">
+                  </div>
+                  <div class="input-group">
+                    <input class="form-control" type="text" name="_relationship" placeholder="">
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <a href="" class="site-btn">Submit New Member</a>
+            </div>
+          </div><!-- .modal-content -->
+        </div><!-- .modal-dialog -->
+      </div><!-- .modal -->
+      <div class="row mt70 text-center">
+        <div class="col-xs-4 col-xs-offset-4">
+          <div class="card">
+            <div class="card-body">
+              <div class="card-img">
+                <img src="assets/img/02.jpg" alt="user" class="img-circle">
+              </div>
+              <div class="card-content">
+                <h3>Susie Gartner</h3>
+                <p>Phone:</p>
+                <p>Email:</p>
+                <p>Relationship:</p>
+              </div>
+            </div>
+            <div class="card-footer">
+              <a href="" class="site-btn" id="edit-member">Edit</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<footer>
+  <script src="assets/js/jquery-2.1.4.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/owl.carousel.min.js"></script>
+</footer>
+</html>
