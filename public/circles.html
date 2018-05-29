@@ -2,17 +2,17 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Enrol New Patient | Care Circles</title>
+    <title>Add To Your Network | Care Circles</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="/assets/css/circles.css">
   </head>
   <body>
     <h2>Set Up Circles</h2>
     <div class="row">
       <div class="panel panel-default col-md-6">
-        <!-- Default panel contents -->
-
-        <div class="panel-heading">Circles</div>
         <div class="circles-box">
           <div class="extended-circle">
             <div class="outer-circle">
@@ -21,20 +21,108 @@
             </div>
           </div>
         </div>
-
-
-
-
-        <!-- Table -->
-
       </div>
+
       <div class="panel panel-default col-md-6">
-        <!-- Default panel contents -->
-        <div class="panel-heading">People</div>
+        <!--<div class="jumbotron jumbotron-inner">-->
+          <h1>Inner Circle</h1>
+        <!--</div>-->
+        <!--<div class="content">
+          <div class="container">-->
+            <!--<div class="row mt70 text-center">-->
+              <div class="col-xs-4 col-xs-offset-4">
+                  <a href="" class="site-btn" id="add-member-btn">Add Member</a>
+              </div>
+            <!--</div>-->
+            <div class="modal fade" id="add-member" role="dialog">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title">Add Member</h3>
+                  </div>
+                  <div class="modal-body">
+                    <form class="form" action="/circlemembers/inner" role="form" method="POST" >
+                      <div class="form-group">
+                        <label for="name">Name</label>
+                        <input class="form-control" type="text" name="name" placeholder="" required="required">
+                      </div>
+                      <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input class="form-control" type="text" name="phone" placeholder="" required="required">
+                      </div>
+                      <div class="form-group">
+                        <label for="email">Email</label>
+                        <input class="form-control" type="text" name="email" placeholder="" required="required">
+                      </div>
+                      <div class="form-group">
+                        <label for="relationship">Relationship</label>
+                        <input class="form-control" type="text" name="relationship" placeholder="">
+                      </div>
+                      <div class="modal-footer">
+                        <button id="submit-member-btn" type="submit" class="btn btn-default">Add New Member</button>
+                      </div>
+                    </form>
+                  </div>
 
-        <!-- Table -->
-
+                </div><!-- .modal-content -->
+              </div><!-- .modal-dialog -->
+            </div><!-- .modal -->
+            <!--<div class="row mt70 text-center">-->
+                <div id='cards'>
+                </div>
+            <!--</div>-->
+          <!--</div>
+        </div>-->
       </div>
     </div>
   </body>
+  <footer>
+    <script src="assets/js/jquery-2.1.4.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!--<script src="assets/js/main.js"></script>-->
+    <!--<script src="assets/js/owl.carousel.min.js"></script>-->
+    <script type="text/javascript">
+
+    var card = '<div class="card"> \
+       <div class="card-body"> \
+         <div class="card-img"> \
+           <img src="assets/img/02.jpg" alt="user" class="img-circle"> \
+         </div> \
+         <div class="card-content"> \
+           <h3>Susie Gartner</h3> \
+           <p>Phone:</p> \
+           <p>Email:</p> \
+           <p>Relationship:</p> \
+         </div> \
+       </div> \
+       <div class="card-footer"> \
+         <a href="" class="site-btn" id="edit-member">Edit</a> \
+       </div> \
+     </div>"';
+
+      $(document).ready(function(){
+        $("#add-member-btn").click(function(e){
+          e.preventDefault();
+          console.log("test");
+            $("#add-member").modal();
+        });
+        $("#submit-member-btn").click(function(e){
+
+          $("#add-member").modal('hide');
+          $("form.form").reset();
+          $("#cards").append(card);
+          //e.preventDefault();
+        });
+
+
+
+
+
+      });
+    </script>
+    <script>
+
+    </script>
+  </footer>
 </html>

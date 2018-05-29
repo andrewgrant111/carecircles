@@ -196,7 +196,7 @@ ul {
 .content {
   display: block;
   vertical-align: middle;
-  text-align: center;
+  /*text-align: center;*/
   float: middle;
 }
 
@@ -222,6 +222,8 @@ ul {
   align-items: center;
   background-color: #FAFAFA;
   padding: 10px;
+	width: 80%;
+	margin: auto;
 }
 
 .card .card-img {
@@ -241,6 +243,11 @@ ul {
 
 .card .card-footer {
   display: inline-block;
+}
+
+.modal-content {
+	position:absolute;
+	top: 100px;
 }
 
 /*------------------

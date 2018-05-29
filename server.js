@@ -180,7 +180,7 @@ app.get("/patients", function(req,res) {
 app.post("/circlemembers/inner", function(req,res) {
   circleMembers["inner"].push(req.body);
   console.log(req.body);
-  res.status(200).send("Test");
+  res.status(200).send();
 });
 
 app.post("/circlemembers/outer", function(req,res) {
