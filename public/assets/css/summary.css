@@ -1,0 +1,26 @@
+.circlesheaderdiv {
+  text-align: center;
+}
+
+.graybackground {
+  background-color: #fafafa;
+}
+
+.graycolumn {
+  width: 100%;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+img.columnimage {
+  width: 50%;
+  min-width: 150px;
+}
+
+.circlemembercard {
+  background-color: #ffffff;
+  width: 100%;
+  margin: 5px;
+  box-shadow: 2px 2px 5px #eaeaea;
+}

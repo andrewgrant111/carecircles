@@ -218,3 +218,7 @@ app.post("/sms", function(req,res){
   })
   .then((message) => console.log(message.sid));
 });
+
+app.post("/patients/new", function(req,res){
+  req.body
+});
