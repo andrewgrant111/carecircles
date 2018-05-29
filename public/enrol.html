@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Enrol New Patient | Care Circles</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+  <body>
+    <h2>Enrol New Patient</h2>
+    <h5>1. Find Patient by Provincial Health Number in Provincial Registry</h5>
+    <form action="/patients" method="GET">
+      <div class="form-group">
+        <!-- <label for="phn">Find Patient by Provincial Health Number in Provincial Registry</label> -->
+        <div class="row">
+          <div class="col-6 col-md-10">
+            <input type="text" class="form-control" id="phn" name="phn" placeholder="Patient's Provincial Health Number">
+          </div>
+          <div class="col-6 col-md-2">
+            <button type="search" class="btn btn-primary form-control">Search</button>
+          </div>
+        </div>
+      </div>
+    </form>
+    <form action="/register" method="POST">
+      <div class="form-group">
+        <label for="full_name">Full Name</label>
+        <input type="name" class="form-control" id="full_name" placeholder="Full name">
+      </div>
+      <div class="form-group">
+        <label for="dob">Date of Birth</label>
+        <input type="date" class="form-control" id="dob" placeholder="DOB">
+      </div>
+      <div class="form-group">
+        <label for="gender">Gender</label>
+        <select class="custom-select">
+          <option selected>Gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="address">Mailing Address</label>
+        <input type="text" class="form-control" id="address" placeholder="Mailing Address">
+      </div>
+      <div>
+        <h5>2. Contact Info</h5>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone</label>
+        <input type="phone" class="form-control" id="phone" placeholder="Phone">
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" placeholder="Email">
+      </div>
+      <div>
+        <h5>3. Agreement</h5>
+      </div>
+      <div class="form-group">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="gridCheck">
+          <label class="form-check-label" for="gridCheck">
+            I agree
+          </label>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Continue</button><br />
+      Or find my <a href="/find_patient.html">registered patient</a>
+    </form>
+  </body>
+</html>
