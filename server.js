@@ -146,7 +146,7 @@ var patients = [{
   "name": "Edna Gartner",
   "phoneNumber": "(778) 876-5432",
   "address": "123 Evergreen Terrace, Vancouver, BC",
-  "dob": "June 1, 1948",
+  "dob": "1948-06-01",
   "gender": "Female"
 }];
 
