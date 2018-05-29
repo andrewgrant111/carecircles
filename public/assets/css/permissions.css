@@ -33,7 +33,7 @@ button.btn {
 
   background-color: #4697be;
   height: 100px;
-  font-family: Raleway;
+  font-family: Helvetica;
   font-size: 24px;
   font-weight: bold;
   font-style: normal;
@@ -56,7 +56,7 @@ table.table {
 }
 
 h2 {
-  font-family: Raleway;
+  font-family: Helvetica;
   font-size: 36px;
   font-weight: normal;
   font-style: normal;
@@ -65,11 +65,11 @@ h2 {
   letter-spacing: 2.2px;
   text-align: center;
   color: #000000;
-  -webkit-text-stroke: 1px #979797;
+  /*-webkit-text-stroke: 1px #979797;*/
 }
 
 .explanation {
-  font-family: Raleway;
+  font-family: Helvetica;
   font-size: 24px;
   font-weight: normal;
   font-style: normal;
