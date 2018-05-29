@@ -23,12 +23,12 @@
       <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
           <div class="navbar-header">
-            <a class="navbar-brand" href="#"><img alt="logo" src="assets/img/logo2-navbar.png"></a>
+            <a class="navbar-brand" href="/"><img alt="logo" src="assets/img/logo2-navbar.png"></a>
           </div>
           <ul class="nav navbar-nav">
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="enroll.html">Enroll New Patient</a></li>
+            <li><a href="enroll.html" class="active">Enroll New Patient</a></li>
             <li><a href="permissions.html">Permissions</a></li>
             <li><a href="permissions.html">Help</a></li>
           </ul>
@@ -49,7 +49,7 @@
               <input type="text" class="form-control enrollsearch" id="phn" name="phn" placeholder="Example: 9000123456">
             </div>
             <div class="col-xs-6">
-              <button type="search" class="site-btn form-control enrollsearch" id="searchbutton">Search</button>
+              <button type="search" class="site-btn fullwidth enrollsearch" id="searchbutton">Search</button>
             </div>
           </div>
         </div>
@@ -57,7 +57,7 @@
       <form action="/patients/new" method="POST">
         <div class="form-group">
           <label for="full_name">Full Name</label>
-          <input type="name" class="form-control" id="full_name" placeholder="First and Last Name">
+          <input type="text" class="form-control" id="full_name" placeholder="First and Last Name">
         </div>
         <div class="form-group">
           <label for="dob">Date of Birth</label>
@@ -81,7 +81,7 @@
         </div>
         <div class="form-group">
           <label for="phone">Phone</label>
-          <input type="phone" class="form-control" id="phone" placeholder="Phone">
+          <input type="tel" class="form-control" id="phone" placeholder="Phone">
         </div>
         <div class="form-group">
           <label for="email">Email</label>
@@ -170,7 +170,7 @@
                 email: $('#email').val()
               },
               success: function(result) {
-                window.location.href = "permissions.html";
+                window.location.href = "circles.html";
               },
               error: function(result) {
                 alert('error');
