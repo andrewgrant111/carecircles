@@ -8,13 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="assets/css/enroll.css">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css"/>
   	<link rel="stylesheet" href="assets/css/font-awesome.min.css"/>
   	<link rel="stylesheet" href="assets/css/flaticon.css"/>
   	<link rel="stylesheet" href="assets/css/magnific-popup.css"/>
   	<link rel="stylesheet" href="assets/css/owl.carousel.css"/>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/enroll.css">
   </head>
   <body>
     <header>
@@ -26,34 +26,30 @@
             <a class="navbar-brand" href="#"><img alt="logo" src="assets/img/logo2-navbar.png"></a>
           </div>
           <ul class="nav navbar-nav">
-            <!-- <li><a href="enroll.html">Enroll New Patient</a></li>
-            <li><a href="permissions.html">Permissions</a></li> -->
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="enroll.html">Enroll New Patient</a></li>
             <li><a href="permissions.html">Permissions</a></li>
             <li><a href="permissions.html">Help</a></li>
-            <!-- <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                <span class="fa fa-user"></span>Nurse Jones
-              </a>
-            </li> -->
           </ul>
         </div>
       </nav>
     </header>
     <div class="container mt70">
-      <h2>Enroll New Patient</h2>
+      <h1 class="text-center">Patient Enrollment Form</h1>
+      <div class="instructions">
+        Instructions
+      </div>
       <h3>1. Find Patient by Medical Care Plan Number (MCP, or Provincial Health Number)</h3>
       <form action="/patients" method="GET">
-        <div class="form-group">
-          <!-- <label for="phn">Find Patient by Provincial Health Number in Provincial Registry</label> -->
+        <div class="form-group enrollsearchdiv">
+          <label for="phn">Patient Provincial Health Number</label>
           <div class="row">
-            <div class="col-6 col-md-10">
-              <input type="text" class="form-control" id="phn" name="phn" placeholder="Patient's Provincial Health Number">
+            <div class="col-xs-6">
+              <input type="text" class="form-control enrollsearch" id="phn" name="phn" placeholder="Example: 9000123456">
             </div>
-            <div class="col-6 col-md-2">
-              <button type="search" class="btn btn-primary form-control" id="searchbutton">Search</button>
+            <div class="col-xs-6">
+              <button type="search" class="site-btn form-control enrollsearch" id="searchbutton">Search</button>
             </div>
           </div>
         </div>
@@ -112,11 +108,11 @@
           </div>
         </div> -->
         <div class="row">
-          <div class="col-sm-6 col-md-2 col-md-offset-2">
-            <a href="/disagree.html" class="btn btn-danger form-control">Disagree</a>
+          <div class="col-xs-6">
+            <a href="/disagree.html" class="site-btn2 fullwidth">Disagree</a>
           </div>
-          <div class="col-sm-6 col-md-2 col-md-offset-2">
-            <button id="agreebutton" class="btn btn-primary form-control">Agree</button><br />
+          <div class="col-xs-6">
+            <button id="agreebutton" class="site-btn fullwidth">Agree</button><br />
           </div>
         </div>
       </form>

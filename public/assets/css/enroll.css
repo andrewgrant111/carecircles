@@ -1,3 +1,33 @@
+h3 {
+  font-size: 24px;
+}
+
+div.instructions {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.enrollsearchdiv {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.enrollsearch {
+  height: 50px;
+}
+
+input.form-control {
+  border-radius: 0px;
+}
+
+.site-btn.fullwidth, .site-btn2.fullwidth {
+  width: 100%;
+}
+
+label {
+  font-size: 18px;
+}
+
 .terms {
   background-color: #fafafa;
   overflow-y: hidden;
