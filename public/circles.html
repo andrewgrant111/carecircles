@@ -35,8 +35,13 @@
       </div>
       <div class="row">
         <div class="col-md-6">
+<<<<<<< HEAD
+          <h3>My Circles</h3>
+          <p id="circle-explanation" class="explanation">Circle explanations go here blah blah blah blah blah blah</p>
+=======
           <h2>My Circles</h2>
           <p id="circle-explanation" class="explanation">By default, my inner circle has permissions to see my medication, diagnosis, symptoms, diet, exercise, appointments, and transport.</p>
+>>>>>>> origin/master
           <div class="circles-box">
             <div class="extended-circle">
               <div class="outer-circle">
@@ -48,7 +53,7 @@
         </div>
 
         <div class="col-md-6">
-          <h2 id="circle-panel-header">Members of My Inner Circle</h2>
+          <h3 id="circle-panel-header">Members of My Inner Circle</h3>
           <div class="add-button-panel">
             <a href="" class="site-btn" id="add-member-btn">Add Someone to My Inner Circle</a>
           </div>
@@ -57,7 +62,7 @@
               <div class="modal-content">
                 <div class="modal-header">
                   <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
-                  <h2 class="modal-title">Add Member</h2>
+                  <h3 class="modal-title">Add Member</h3>
                 </div>
                 <div class="modal-body">
                   <form id="new-member-form" class="form" action="/circlemembers/inner" role="form" method="POST" >
@@ -87,7 +92,17 @@
             </div><!-- .modal-dialog -->
           </div><!-- .modal -->
           <div id='cards' class="cards">
-          </div>
+            <div class="card">
+              <div class="card-img"><img src="assets/img/02.jpg" alt="user" class="img-circle"></div>
+                <div class="card-content">
+                  <div class="card-name"></div>
+                  <div class="card-relationship">My </div>
+                  <hr>
+                  <p class="card-phone">Phone: </p>
+                  <p class="card-email">Email: </p>
+                </div>
+              </div>
+            </div>
           <div class="next">
             <button id="nextbutton" class="btn btn-default">Next</button>
           </div>
@@ -113,7 +128,7 @@
             <p class="card-email">Email: </p> \
           </div> \
         </div>';
-      //
+
       // '<div class="card"> \
       //    <div class="card-body"> \
       //      <div class="card-img"> \

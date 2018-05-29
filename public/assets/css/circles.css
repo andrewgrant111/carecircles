@@ -53,7 +53,7 @@
 
 h2 {
   font-family: Helvetica;
-  font-size: 36px;
+  font-size: 28px;
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
@@ -64,9 +64,21 @@ h2 {
   /*-webkit-text-stroke: 1px #979797;*/
 }
 
+h3 {
+  font-family: Helvetica;
+  font-size: 22px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 2.2px;
+  text-align: center;
+  color: #000000;
+}
+
 .explanation {
   font-family: Helvetica;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
@@ -96,7 +108,7 @@ h2 {
 }
 
 #nextbutton, #submit-member-btn {
-  margin: 0 10%;
+  margin: 0;
   background-color: #4697be;
   height: 60px;
   font-family: Helvetica;
@@ -111,7 +123,7 @@ h2 {
 }
 
 #nextbutton {
-  width: 80%;
+  width: 100%;
   margin: 0px 0px 50px 0;
 }
 
@@ -131,10 +143,17 @@ div.next {
 
 .cards .card {
   width: 100%;
-  display: inline-block;
+  display: block;
 }
 
 .cards .card .card-img {
-  float: left;
   width: auto;
+  display: block;
+  float: none;
+  text-align: center;
+}
+
+.cards .card .card-content {
+  width: auto;
+  display: block;
 }

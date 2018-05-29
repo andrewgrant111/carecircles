@@ -20,3 +20,66 @@ img.columnimage {
   margin: 15px 0;
   box-shadow: 2px 2px 5px #eaeaea;
 }
+
+
+h2 {
+  font-family: Helvetica;
+  font-size: 28px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 2.2px;
+  text-align: center;
+  color: #000000;
+  /*-webkit-text-stroke: 1px #979797;*/
+}
+
+h3 {
+  font-family: Helvetica;
+  font-size: 22px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 2.2px;
+  text-align: center;
+  color: #000000;
+}
+
+.explanation {
+  font-family: Helvetica;
+  font-size: 18px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 1.5px;
+  text-align: center;
+  color: #4a4a4a;
+}
+
+
+.cards {
+  display: block;
+  text-align: left;
+  padding: 0;
+}
+
+.cards .card {
+  width: 100%;
+  display: block;
+  background-color: white;
+}
+
+.cards .card .card-img {
+  width: auto;
+  display: block;
+  float: none;
+  text-align: center;
+}
+
+.cards .card .card-content {
+  width: auto;
+  display: block;
+}

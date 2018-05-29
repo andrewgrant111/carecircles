@@ -152,24 +152,30 @@ var patients = [{
 
 var circleMembers = {
   "inner": [{
-    // "name": "Seymour Skinner",
-    // "phone": "(604) 604-0406",
-    // "email": "seymour.skinner@geocities.com",
-    // "relationship": "Son"
-  }],
+    "name": "Seymour Skinner",
+    "phone": "(604) 604-0406",
+    "email": "seymour.skinner@geocities.com",
+    "relationship": "Son"
+    }],
   "outer": [{
-    // "name": "Marge Simpson",
-    // "phone": "(604) 222-2222",
-    // "email": "marge.simpson@yahoo.com",
-    // "relationship": "Neighbour"
-  }],
+      "name": "Marge Simpson",
+      "phone": "(604) 222-2222",
+      "email": "marge.simpson@yahoo.com",
+      "relationship": "Neighbour"
+    }],
   "extended": [{
-    // "name": "Super Nintendo Chalmers",
-    // "phone": "(778) 778-7788",
-    // "email": "super.nintendo@altavista.com",
-    // "relationship": "Friend"
+      "name": "Super Nintendo Chalmers",
+      "phone": "(778) 778-7788",
+      "email": "super.nintendo@altavista.com",
+      "relationship": "Friend"
   }]
 };
+
+// var circleMembers = {
+//   "inner": [],
+//   "outer": [],
+//   "extended": []
+// };
 
 var enrolledPatients = [];
 
