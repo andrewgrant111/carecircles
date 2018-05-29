@@ -22,23 +22,27 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
               <h3 class="modal-title">Add Member</h3>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
               <form class="form" action="" role="form" method="POST">
                 <div class="form-group">
                   <div class="input-group">
+                    <label for="_name" class="col-sm-2 col-form-label">Name</label>
                     <input class="form-control" type="text" name="_name" placeholder="" required="required">
                   </div>
                   <div class="input-group">
+                    <label for="_relationship" class="col-sm-2 col-form-label">Relationship</label>
+                    <input class="form-control" type="text" name="_relationship" placeholder="">
+                  </div>
+                  <div class="input-group">
+                    <label for="_phone" class="col-sm-2 col-form-label">Phone</label>
                     <input class="form-control" type="text" name="_phone" placeholder="" required="required">
                   </div>
                   <div class="input-group">
+                    <label for="_email" class="col-sm-2 col-form-label">Email</label>
                     <input class="form-control" type="text" name="_email" placeholder="" required="required">
-                  </div>
-                  <div class="input-group">
-                    <input class="form-control" type="text" name="_relationship" placeholder="">
                   </div>
                 </div>
               </form>
@@ -50,22 +54,16 @@
         </div><!-- .modal-dialog -->
       </div><!-- .modal -->
       <div class="row mt70 text-center">
-        <div class="col-xs-4 col-xs-offset-4">
+        <div class="col-xs-6 col-xs-offset-3">
           <div class="card">
-            <div class="card-body">
-              <div class="card-img">
-                <img src="assets/img/02.jpg" alt="user" class="img-circle">
-              </div>
+              <div class="card-img"><img src="assets/img/02.jpg" alt="user" class="img-circle"></div>
               <div class="card-content">
-                <h3>Susie Gartner</h3>
+                <div class="card-name">Susie Gartner</div>
+                <div class="card-rel">My Daughter</div>
+                <hr>
                 <p>Phone:</p>
                 <p>Email:</p>
-                <p>Relationship:</p>
               </div>
-            </div>
-            <div class="card-footer">
-              <a href="" class="site-btn" id="edit-member">Edit</a>
-            </div>
           </div>
         </div>
       </div>

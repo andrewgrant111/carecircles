@@ -12,7 +12,7 @@
 html,
 body {
 	height: 100%;
-	font-family: "Raleway", sans-serif;
+	font-family: "Helvetica", sans-serif;
 }
 
 img {
@@ -25,7 +25,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: "Raleway", sans-serif;
+	font-family: "Helvetica", sans-serif;
 	padding: 0;
 	margin: 0;
 }
@@ -35,10 +35,10 @@ h2 {
 }
 
 p {
-	font-size: 15px;
-	color: #6c6e7e;
+	font-size: 18px;
+	color: #000000;
 	line-height: 30px;
-	font-family: "Raleway", sans-serif;
+	font-family: "Helvetica", sans-serif;
 }
 
 a:hover,
@@ -156,7 +156,7 @@ ul {
 --------------------------*/
 
 .site-btn {
-	font-family: "Raleway", sans-serif;
+	font-family: "Helvetica", sans-serif;
 	font-size: 15px;
 	color: #641fb1;
 	display: inline-block;
@@ -217,13 +217,24 @@ ul {
 }
 
 .card {
-  text-align: center;
+  text-align: left;
   vertical-align: middle;
   align-items: center;
   background-color: #FAFAFA;
   padding: 10px;
 	width: 80%;
-	margin: auto;
+	margin: 10px;
+  font-size: 18px;
+}
+
+.card .card-name {
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: 700;
+  color: #e78f51;
+}
+
+.card .card-rel {
 }
 
 .card .card-img {
@@ -232,17 +243,13 @@ ul {
 
 .card .card-img img {
   padding: 20px;
-  display: block;
+  display: inline-block;
   vertical-align: middle;
 }
 
 .card .card-content {
-  margin: 20px;
-  text-align: left;
-}
-
-.card .card-footer {
   display: inline-block;
+  color: #000000;
 }
 
 .modal-content {
@@ -353,7 +360,7 @@ ul {
 	margin-right: 15px;
 	color: #222;
 	position: relative;
-	font-family: "Raleway", sans-serif;
+	font-family: "Helvetica", sans-serif;
 	font-size: 15px;
 	letter-spacing: 0.09em;
 	-webkit-transition: all 0.4s ease 0s;
@@ -591,7 +598,7 @@ ul {
 
 .testimonial span {
 	display: block;
-	font-family: "Raleway", sans-serif;
+	font-family: "Helvetica", sans-serif;
 	font-size: 48px;
 	color: #6a23b5;
 }
@@ -944,7 +951,7 @@ ul {
 .page-top-section .page-info .page-links a,
 .page-top-section .page-info .page-links span {
 	font-size: 18px;
-	font-family: "Raleway", sans-serif;
+	font-family: "Helvetica", sans-serif;
 	color: #fff;
 	margin-right: 12px;
 	padding-right: 12px;
@@ -1170,7 +1177,7 @@ ul {
 }
 
 .read-more {
-	font-family: "Raleway", sans-serif;
+	font-family: "Helvetica", sans-serif;
 	font-size: 16px;
 	color: #0b1033;
 	position: relative;
@@ -1193,7 +1200,7 @@ ul {
 
 .page-pagination a {
 	display: inline-block;
-	font-family: "Raleway", sans-serif;
+	font-family: "Helvetica", sans-serif;
 	font-size: 16px;
 	color: #0b1033;
 	padding: 6px 10px;
@@ -1364,7 +1371,7 @@ ul {
 
 .comment-list li .commetn-text h3 {
 	font-size: 15px;
-	font-family: "Raleway", sans-serif;
+	font-family: "Helvetica", sans-serif;
 	margin-bottom: 30px;
 	font-weight: 600;
 }
@@ -1396,7 +1403,7 @@ ul {
 }
 
 .single-progress-item p {
-	font-family: "Raleway", sans-serif;
+	font-family: "Helvetica", sans-serif;
 	color: #333;
 	margin-bottom: 12px;
 	font-weight: 500;
@@ -1423,7 +1430,7 @@ ul {
 	right: 0;
 	font-weight: bold;
 	top: -35px;
-	font-family: "Raleway", sans-serif;
+	font-family: "Helvetica", sans-serif;
 	color: #333;
 	font-weight: 500;
 }
@@ -1448,7 +1455,7 @@ ul {
 
 .site-accordions .panel-heading .panel-title {
 	font-size: 15px;
-	font-family: "Raleway", sans-serif;
+	font-family: "Helvetica", sans-serif;
 	text-transform: none;
 	margin: 0;
 	-webkit-transition: all 0.4s ease 0s;
@@ -1512,7 +1519,7 @@ ul {
 }
 
 .circle-progress .progress-info p {
-	font-family: "Raleway", sans-serif;
+	font-family: "Helvetica", sans-serif;
 	color: #7c8d93;
 	font-size: 14px;
 	font-weight: 600;
@@ -1533,7 +1540,7 @@ ul {
 }
 
 .facts .fact .fact-text h2 {
-	font-family: "Raleway", sans-serif;
+	font-family: "Helvetica", sans-serif;
 	font-size: 72px;
 	color: #2be6ab;
 	font-weight: 600;
