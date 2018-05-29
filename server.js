@@ -4,7 +4,7 @@ var bodyParser = require("body-parser");
 //var mongodb = require("mongodb");
 //var ObjectID = mongodb.ObjectID;
 //var basicAuth = require('basic-auth');
-var authCreds = require("./auth-creds.js");
+//var authCreds = require("./auth-creds.js");
 
 var nodemailer = require('nodemailer');
 var router = express.Router();
