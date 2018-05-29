@@ -1,15 +1,25 @@
+h1 {
+  font-size: 28px;
+  margin-bottom: 28px;
+}
+
 h3 {
-  font-size: 24px;
+  font-size: 22px;
+  text-align: left;
+}
+
+hr {
+  margin: 28px 0px;
+  width: 100%;
 }
 
 div.instructions {
-  margin-top: 1em;
-  margin-bottom: 1em;
+  margin: 18px 0;
 }
 
 .enrollsearchdiv {
-  margin-top: 1em;
-  margin-bottom: 1em;
+  margin-top: 36px;
+  margin-bottom: 36px;
 }
 
 .enrollsearch {
@@ -39,9 +49,9 @@ label {
 
 .terms {
   background-color: #fafafa;
-  overflow-y: hidden;
-  padding: 1em 2em;
-  margin: 1em 0;
+  overflow-y: scroll;
+  padding: 18px 36px;
+  margin: 18px 0;
 }
 
 .terms.expand {
