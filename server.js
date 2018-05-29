@@ -244,6 +244,7 @@ app.post("/update", function(req,res) {
 // });
 
 app.post("/sms", function(req,res){
+  console.log(req.body.phone);
   var accountSid = process.env.TWILIO_SID; // Your Account SID from www.twilio.com/console
   var authToken = process.env.TWILIO_TOKEN;   // Your Auth Token from www.twilio.com/console
 

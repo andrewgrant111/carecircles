@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Circle Permissions and Settings | Care Circles</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/css/configure.css">
+  </head>
+  <body>
+    <h2>EMR Demo Page</h2>
+    <div class="panel panel-default">
+
+
+    <p>Test Patient</p>
+    <div class="button-div">
+      <button id="update-meds-btn" type="button" class="btn btn-primary form-control">Update Meds</button><br />
+    </div>
+
+  </body>
+  <script src="assets/js/jquery-2.1.4.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $("#update-meds-btn").click(function() {
+        console.log("button pressed");
+        $.post("/sms", {"phone":"+17788386640"} );
+      });
+    });
+  </script>
+</html>
