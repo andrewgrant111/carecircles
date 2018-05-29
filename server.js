@@ -142,8 +142,8 @@ var server = app.listen(process.env.PORT || 80, function () {
 // });
 
 var patients = [{
-  "phn": "12345",
-  "name": "Bryan Adams",
+  "phn": "9000123456",
+  "name": "Edna Gartner",
   "phoneNumber": "(778) 876-5432",
   "address": "123 Evergreen Terrace, Vancouver, BC"
 }];
@@ -167,40 +167,39 @@ app.get("/patients/:phn", function(req,res) {
 app.post("/update", function(req,res) {
   patients.push(req.body);
 });
-
-
-app.post("/email", function(req, res) {
-  // Contact Form send email using Zoho SMTP Server and NodeMailer
-    var transporter = nodemailer.createTransport({
-        service: 'Zoho',
-        auth: {
-            user: authCreds.smtp.user, // Your email id
-            pass: authCreds.smtp.pass // Your password
-        }
-    });
-
-    var mailOptions = {
-        from: 'info@carecircles.ca',
-        //replyTo: 'info@carecircles.ca',
-        to: req.body.email, // list of receivers
-        subject: 'Care Circles Info', // Subject line
-        text: "Test Email"
-    };
-
-    transporter.sendMail(mailOptions, function(error, info){
-        if(error){
-            // console.log(error);
-            res.status(500).send("There was a problem sending the message. Please send email to info@carecircles.ca");
-        }else{
-            // console.log('Message sent: ' + info.response);
-            res.status(200).send("Message sent successfully, we will reply as soon as possible!");
-        };
-    });
-});
+//
+// app.post("/email", function(req, res) {
+//   // Contact Form send email using Zoho SMTP Server and NodeMailer
+//     var transporter = nodemailer.createTransport({
+//         service: 'Zoho',
+//         auth: {
+//             user: authCreds.smtp.user, // Your email id
+//             pass: authCreds.smtp.pass // Your password
+//         }
+//     });
+//
+//     var mailOptions = {
+//         from: 'info@carecircles.ca',
+//         //replyTo: 'info@carecircles.ca',
+//         to: req.body.email, // list of receivers
+//         subject: 'Care Circles Info', // Subject line
+//         text: "Test Email"
+//     };
+//
+//     transporter.sendMail(mailOptions, function(error, info){
+//         if(error){
+//             // console.log(error);
+//             res.status(500).send("There was a problem sending the message. Please send email to info@carecircles.ca");
+//         }else{
+//             // console.log('Message sent: ' + info.response);
+//             res.status(200).send("Message sent successfully, we will reply as soon as possible!");
+//         };
+//     });
+// });
 
 app.post("/sms", function(req,res){
-  var accountSid = authCreds.twilio.sid; // Your Account SID from www.twilio.com/console
-  var authToken = authCreds.twilio.token;   // Your Auth Token from www.twilio.com/console
+  var accountSid = process.env.TWILIO_SID; // Your Account SID from www.twilio.com/console
+  var authToken = process.env.TWILIO_TOKEN;   // Your Auth Token from www.twilio.com/console
 
   var twilio = require('twilio');
   var client = new twilio(accountSid, authToken);
@@ -208,7 +207,7 @@ app.post("/sms", function(req,res){
   client.messages.create({
       body: 'Hello from Node',
       to: req.body.phone,  // Text this number
-      from: authCreds.twilio.phone // From a valid Twilio number
+      from: process.env.TWILIO_PHONE // From a valid Twilio number
   })
   .then((message) => console.log(message.sid));
 });
