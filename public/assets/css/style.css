@@ -54,14 +54,31 @@ ul {
 	padding: 0;
 }
 
-nav {
+/*------------------------
+	Navbar css
+--------------------------*/
+
+nav.navbar-default {
 	font-size: 24px;
 	letter-spacing: 1.5px;
+	background-color: #ffffff;
   color: #4a4a4a;
+	border-color: #d8d8d8;
+	border-bottom-width: 2px;
+	height: 70px;
 }
 
-nav > li {
-	
+ul.navbar-right > li {
+	margin-left: 3em;
+	padding-top: 10px;
+}
+
+a.navbar-brand {
+	padding: 10px;
+}
+
+a.navbar-brand > img {
+	height: 50px;
 }
 
 /*------------------------
