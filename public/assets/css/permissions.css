@@ -1,3 +1,8 @@
+.panel {
+  border: 0;
+  box-shadow: none;
+}
+
 th, td {
   text-align: center;
   vertical-align: middle;
@@ -30,20 +35,20 @@ th.special {
 
 button.btn {
   margin: 0 10%;
-
   background-color: #4697be;
   height: 100px;
   font-family: Helvetica;
   font-size: 24px;
-  font-weight: bold;
+  font-weight: 500;
   font-style: normal;
   font-stretch: normal;
   line-height: normal;
-  letter-spacing: 1.5px;
+  letter-spacing: 1px;
   text-align: center;
   color: #ffffff;
-  border-radius: 0px;
+  border: none;
   margin: 0px 0px 50px 0;
+  border-radius: 0 !important;
 }
 
 .button-div {
