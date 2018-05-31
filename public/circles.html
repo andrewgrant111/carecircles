@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
   </head>
   <body>
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-default">
       <div class="container">
         <div class="navbar-header">
           <a class="navbar-brand" href="/"><img alt="logo" src="assets/img/logo2-navbar.png"></a>
@@ -28,28 +28,29 @@
       <div class="panel-body text-center">
         <p>For each of your circles, add the people in your life whom you wish to have access to your information.</p>
       </div>
-      <div class="row">
+      <div class="row mt30">
         <div class="col-md-6">
-          <h2>My Circles</h2>
-          <p id="circle-explanation">By default, my inner circle has permissions to see my medication, diagnosis, symptoms, diet, exercise, appointments, and transport.</p>
-          <div class="circles-box">
-            <div class="circle extended-circle">
-              <div class="circle outer-circle">
-                <div class="circle inner-circle inner-color">
+          <h1>My Circles</h1>
+          <p class="mt20" id="circle-explanation">By default, my inner circle has permissions to see my medication, diagnosis, symptoms, diet, exercise, appointments, and transport.</p>
+          <div class="outer-circles-box mt30 mb50">
+            <div class="circles-box">
+              <div class="circle extended-circle">
+                <div class="circle outer-circle">
+                  <div class="circle inner-circle inner-color">
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="circle circle-image">
-            <img src="assets/img/user.png" alt="user" class="img-circle">
+            <div class="circle circle-image">
+              <img src="assets/img/user.png" alt="user" class="img-circle">
+            </div>
           </div>
         </div>
 
         <div class="col-md-6">
-          <h2 id="circle-panel-header">Members of My Inner Circle</h2>
-          <br>
+          <h1 id="circle-panel-header">Members of My Inner Circle</h1>
           <div class="add-button-panel">
-            <a href="" class="site-btn" id="add-member-btn">Add Someone to My Inner Circle</a>
+            <a href="" class="mt20 site-btn" id="add-member-btn">Add Someone to My Inner Circle</a>
           </div>
           <div class="modal fade" id="add-member" role="dialog">
             <div class="modal-dialog">
@@ -77,7 +78,7 @@
                       <input class="form-control" type="text" name="email" placeholder="" required="required">
                     </div>
                     <div class="modal-footer">
-                      <button id="submit-member-btn" type="submit" class="btn btn-default">Add New Member</button>
+                      <button id="submit-member-btn" type="submit" class="site-btn btn btn-default">Add New Member</button>
                     </div>
                   </form>
                 </div>
@@ -98,7 +99,7 @@
               </div> -->
             </div>
           <div class="next">
-            <button id="nextbutton" class="btn btn-default">Next</button>
+            <button id="nextbutton" class="site-btn btn btn-default">Next Circle</button>
           </div>
 
         </div>
@@ -181,6 +182,7 @@
             $("#circle-panel-header").text("Members of My Extended Circle");
             $("#add-member-btn").text("Add Someone to My Extended Circle");
             $("#circle-explanation").text("By default, my extended circle has permissions to see my appointments, and transport.");
+            $("#nextbutton").text("Go to Summary");
             circle++
           } else if (circle == 3){
             window.location.href = 'summary.html';

@@ -117,6 +117,10 @@ a.navbar-brand > img {
 	margin-top: 50px;
 }
 
+.mt30 {
+	margin-top: 30px;
+}
+
 .mt20 {
 	margin-top: 20px;
 }
@@ -127,6 +131,10 @@ a.navbar-brand > img {
 
 .mb0 {
 	margin-bottom: 0 !important;
+}
+
+.mb50 {
+	margin-bottom: 50px;
 }
 
 .col-push {
