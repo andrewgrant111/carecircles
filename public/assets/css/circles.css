@@ -2,36 +2,49 @@
   overflow: hidden;
   height: 500px;
   width: 250px;
-  position:fixed;
+  position:relative;
+  top: 15px;
+  left: 100px;
+}
+
+.circle {
+  margin: auto;
+  position: relative;
+  border: 5px solid grey;
+}
+
+.circle-image {
+  margin: auto;
+  position: absolute;
+  left: 50px;
+  top: 300px;
+  border: 5px solid grey;
+  border-radius: 50%;
 }
 
 .extended-circle {
-	border-radius:  0px 250px 250px 0px;
+	border-radius:  250px;;
   background-color: #FFFFFF;
   height: 500px;
-  width: 250px;
-  margin: auto auto;
-  position: absolute;
+  width: 500px;
+  right: 100%;
 }
 
 .outer-circle {
-	border-radius:  0px 175px 175px 0px;
+	border-radius:  175px;
   background-color: #FFFFFF;
   height: 350px;
-  width: 175px;
-  margin: auto auto;
-  position: absolute;
-  top: 75px;
+  width: 350px;
+  top: 73px;
 }
 
 .inner-circle {
-	border-radius:  0px 100px 100px 0px;
+	border-radius:  100px;
   background-color: #FFFFFF;
   height: 200px;
-  width: 100px;
-  margin: auto auto;
-  position: absolute;
-  top: 75px;
+  width: 200px;
+  position: relative;
+  top: 72px;
 }
 
 .cards, .next {
@@ -41,14 +54,17 @@
 
 .inner-circle.inner-color {
   background-color: #F58A41;
+  border: 0px;
 }
 
 .outer-circle.outer-color {
   background-color: #0797C1;
+  border: 0px;
 }
 
 .extended-circle.extended-color {
   background-color: #10475D;
+  border: 0px;
 }
 
 h1 {
@@ -103,6 +119,7 @@ h2 {
   color: #e78f51;
   background-color: white;
   text-transform: capitalize;
+  width: 100%;
 }
 
 #nextbutton, #submit-member-btn {

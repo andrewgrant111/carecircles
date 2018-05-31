@@ -33,12 +33,15 @@
           <h2>My Circles</h2>
           <p id="circle-explanation">By default, my inner circle has permissions to see my medication, diagnosis, symptoms, diet, exercise, appointments, and transport.</p>
           <div class="circles-box">
-            <div class="extended-circle">
-              <div class="outer-circle">
-                <div class="inner-circle inner-color">
+            <div class="circle extended-circle">
+              <div class="circle outer-circle">
+                <div class="circle inner-circle inner-color">
                 </div>
               </div>
             </div>
+          </div>
+          <div class="circle circle-image">
+            <img src="assets/img/user.png" alt="user" class="img-circle">
           </div>
         </div>
 
@@ -150,13 +153,11 @@
             success: function(result) {
               $("#new-member-form")[0].reset();
               $("#add-member").modal('hide');
-              //$("form.form").reset();
               $("#cards").append(card);
               $(".card-name").last().append(nameVal);
               $(".card-phone").last().append(phoneVal);
               $(".card-email").last().append(emailVal);
               $(".card-relationship").last().append(relationshipVal);
-              //window.location.href = "permissions.html";
             },
             error: function(result) {
               alert('error');
@@ -179,7 +180,7 @@
             $("#cards").empty();
             $("#circle-panel-header").text("Members of My Extended Circle");
             $("#add-member-btn").text("Add Someone to My Extended Circle");
-            $("#circle-explanation").text("By default, my inner circle has permissions to see my appointments, and transport.");
+            $("#circle-explanation").text("By default, my extended circle has permissions to see my appointments, and transport.");
             circle++
           } else if (circle == 3){
             window.location.href = 'summary.html';
