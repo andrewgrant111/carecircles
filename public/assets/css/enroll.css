@@ -40,10 +40,6 @@ input.form-control {
   border-radius: 0px;
 }
 
-.site-btn.fullwidth, .site-btn2.fullwidth {
-  width: 100%;
-}
-
 label {
   font-size: 18px;
 }

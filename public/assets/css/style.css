@@ -106,6 +106,14 @@ button.navbar-toggle {
 	margin-left: 0;
 }
 
+button.navbar-toggle::before {
+	content: "X Close";
+}
+
+button.navbar-toggle.collapsed::before {
+	content: "\2630  Menu";
+}
+
 /*------------------------
 	Helper css
 --------------------------*/
