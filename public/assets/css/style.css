@@ -74,8 +74,11 @@ nav.navbar-default {
 }
 
 ul.navbar-right > li {
+	padding: 10px 0px;
+}
+
+ul.navbar-right > li:not(:first-child) {
 	margin-left: 3em;
-	padding-top: 10px;
 }
 
 a.navbar-brand {
@@ -84,6 +87,23 @@ a.navbar-brand {
 
 a.navbar-brand > img {
 	height: 50px;
+}
+
+button.navbar-toggle {
+	border-width: 2px;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+	border: 0px;
+}
+
+.navbar-default .navbar-collapse.in {
+	background-color: #ffffff;
+	border-bottom: 2px solid #d8d8d8;
+}
+
+.navbar-collapse.in ul li {
+	margin-left: 0;
 }
 
 /*------------------------
