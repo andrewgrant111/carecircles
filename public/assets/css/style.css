@@ -42,7 +42,7 @@ h2 {
 p {
 	font-size: 18px;
 	color: #000000;
-	line-height: 30px;
+	/* line-height: 30px; */
 	font-family: "Helvetica", sans-serif;
 }
 

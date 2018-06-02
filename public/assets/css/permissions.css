@@ -9,6 +9,38 @@ th, td {
   width: 25%;
 }
 
+.table.permissions-table>tbody>tr>td {
+  vertical-align: middle;
+}
+
+.table .row-icon-block {
+  display: inline-block;
+}
+
+.table .row-name-block {
+  display: inline-block;
+  margin: 10px 0 0 0;
+  width: 110px;
+}
+
+@media only screen and (max-width: 991px) {
+  .table .row-icon-block {
+    text-align: center;
+    display: block;
+    margin: 5px;
+  }
+
+  .table .row-icon {
+    margin: auto;
+  }
+
+  .table .row-name-block, .table .row-name-block .row-name {
+    text-align: center;
+    display: block;
+    margin: auto;
+  }
+}
+
 th:first-child, td:first-child {
   text-align: left;
 }
@@ -16,7 +48,7 @@ th:first-child, td:first-child {
 .row-icon {
   width: 50px;
   height: 50px;
-  margin-right: 15px;
+  margin: 0 15px;
 }
 
 .header-icon {
@@ -25,8 +57,19 @@ th:first-child, td:first-child {
 }
 
 th p {
-  font-size: 12px;
   font-weight: 500;
+}
+
+p {
+  margin: 0;
+}
+
+p.header-label{
+  font-weight: 700;
+}
+
+.row-name {
+  display: inline;
 }
 
 th.special {
@@ -83,4 +126,24 @@ h2 {
   letter-spacing: 1.5px;
   text-align: center;
   color: #4a4a4a;
+}
+
+td {
+  height: 80px;
+}
+
+.permission-checkbox {
+  height: 100%;
+  width: 100%;
+  border: 0;
+  outline: none;
+  padding: 0;
+  display: block;
+}
+
+.permission-checkbox.checked {
+  background: url("../img/checkmark.png");
+  background-repeat: no-repeat;
+  background-size: 40px 40px;
+  background-position: center;
 }
