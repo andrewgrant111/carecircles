@@ -97,21 +97,38 @@ button.navbar-toggle {
 	border: 0px;
 }
 
-.navbar-default .navbar-collapse.in {
-	background-color: #ffffff;
-	border-bottom: 2px solid #d8d8d8;
-}
-
-.navbar-collapse.in ul li {
-	margin-left: 0;
-}
-
 button.navbar-toggle::before {
 	content: "X Close";
 }
 
 button.navbar-toggle.collapsed::before {
 	content: "\2630  Menu";
+}
+
+#mobilemenu {
+	margin: -4px -15px 0;
+	background-color: #ffffff;
+	border-top: 2px solid #ffffff;
+	border-bottom: 2px solid #d8d8d8;
+	visibility: hidden;
+}
+
+#mobilemenu.in {
+	visibility: visible;
+}
+
+#mobilemenu ul li {
+	padding: 10px 3em;
+}
+
+#mobilemenu.in li:hover {
+	background-color: #fafafa;
+}
+
+@media only screen and (min-width : 768px) {
+	#mobilemenu.in {
+		visibility: hidden;
+	}
 }
 
 /*------------------------
