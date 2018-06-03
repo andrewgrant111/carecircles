@@ -70,6 +70,16 @@ button {
 	overflow: hidden;
 }
 
+legend {
+    display: block;
+    /* padding-left: 2px;
+    padding-right: 2px; */
+    border: none;
+		font-size: 18px;
+		font-weight: 700;
+		margin-bottom: 5px;
+}
+
 /*------------------------
 	Navbar css
 --------------------------*/

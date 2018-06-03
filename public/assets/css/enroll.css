@@ -68,3 +68,12 @@ label {
   justify-content: center;
   align-items: center;
 }
+
+.row.genderOptions {
+  padding: 0.5em 1em;
+}
+
+.genderOptionsElement {
+  max-width: 300px;
+  min-width: 200px;
+}
