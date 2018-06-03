@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Circle Permissions and Settings | Care Circles</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/assets/css/permissions.css">
@@ -9,20 +10,30 @@
   </head>
   <body>
     <header>
-      <!-- Page Preloder -->
       <!-- Navigation -->
       <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
           <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mobilemenu">
+              <span class="sr-only">Toggle navigation</span>
+            </button>
             <a class="navbar-brand" href="/"><img alt="logo" src="assets/img/logo2-navbar.png"></a>
           </div>
-          <ul class="nav navbar-nav">
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="circles.html">My Circles</a></li>
-            <li class="active"><a href="permissions.html">Permissions</a></li>
-            <li><a href="">Help</a></li>
-          </ul>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="circles.html">My Circles</a></li>
+              <li><a href="permissions.html">Permissions</a></li>
+              <li><a href="">Help</a></li>
+            </ul>
+          </div>
+          <div id="mobilemenu">
+            <ul class="nav navbar-nav">
+              <li><a href="circles.html">My Circles</a></li>
+              <li><a href="permissions.html">Permissions</a></li>
+              <li><a href="">Help</a></li>
+            </ul>
+          </div>
         </div>
       </nav>
     </header>
