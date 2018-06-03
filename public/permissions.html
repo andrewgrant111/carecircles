@@ -42,25 +42,180 @@
       <div class="panel panel-default">
         <!-- Default panel contents -->
         <div class="panel-body">
-          <p class="explanation">This is your settings page, use it to confirm of modify the permissions you want to grant to each circle. You can come back later to change this at any time
-</p>
+          <p class="explanation">
+            This is your settings page, use it to confirm of modify the permissions you want to grant to each circle. You can come back later to change this at any time
+          </p>
         </div>
 
         <!-- Table -->
-        <table class="table">
-          <tr><th class="special"><img src="/assets/img/whitespace.png" class="row-icon"><br>Permissions</th><th><img src="/assets/img/InnerCircle.png" class="header-icon"><br>Inner<p>Personal, sensitive, and trusted</p></th><th><img src="/assets/img/OuterCircle.png" class="header-icon"><br>Outer<p>Diet, nutrition, and lifestyle</p></th><th><img src="/assets/img/ExtendedCircle.png" class="header-icon"><br>Extended<p>Support and community engagement</p></th></tr>
-          <tr><td><img src="/assets/img/medication.png" class="row-icon">Medication</td><td><input type="checkbox" aria-label="..." checked></td><td><input type="checkbox" aria-label="..."></td><td><input type="checkbox" aria-label="..."></td></tr>
-          <tr><td><img src="/assets/img/diagnosis.png" class="row-icon">Diagnosis</td><td><input type="checkbox" aria-label="..." checked></td><td><input type="checkbox" aria-label="..."></td><td><input type="checkbox" aria-label="..."></td></tr>
-          <tr><td><img src="/assets/img/symptoms.png" class="row-icon">Symptoms</td><td><input type="checkbox" aria-label="..." checked></td><td><input type="checkbox" aria-label="..."></td><td><input type="checkbox" aria-label="..."></td></tr>
-          <tr><td><img src="/assets/img/diet.png" class="row-icon">Diet</td><td><input type="checkbox" aria-label="..." checked></td><td><input type="checkbox" aria-label="..." checked></td><td><input type="checkbox" aria-label="..."></td></tr>
-          <tr><td><img src="/assets/img/exercise.png" class="row-icon">Exercise</td><td><input type="checkbox" aria-label="..." checked></td><td><input type="checkbox" aria-label="..." checked></td><td><input type="checkbox" aria-label="..."></td></tr>
-          <tr><td><img src="/assets/img/appointment.png" class="row-icon">Appointments</td><td><input type="checkbox" aria-label="..." checked></td><td><input type="checkbox" aria-label="..." checked></td><td><input type="checkbox" aria-label="..." checked></td></tr>
-          <tr><td><img src="/assets/img/transport.png" class="row-icon">Transport</td><td><input type="checkbox" aria-label="..." checked></td><td><input type="checkbox" aria-label="..." checked></td><td><input type="checkbox" aria-label="..." checked></td></tr>
+        <table class="table permissions-table">
+          <tr>
+            <th class="special"><img src="/assets/img/whitespace.png" class="row-icon">
+              <p class="header-label">Permissions</p>
+            </th>
+            <th>
+              <img src="/assets/img/InnerCircle.png" class="header-icon">
+              <p class="header-label">Inner</p>
+              <p>Personal, sensitive, and trusted</p>
+            </th>
+            <th>
+              <img src="/assets/img/OuterCircle.png" class="header-icon">
+              <p class="header-label">Outer</p>
+              <p>Diet, nutrition, and lifestyle</p>
+            </th>
+            <th>
+              <img src="/assets/img/ExtendedCircle.png" class="header-icon">
+              <p class="header-label">Extended</p>
+              <p>Support and community engagement</p>
+            </th>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="row-icon-block">
+                <img src="/assets/img/medication.png" class="row-icon">
+              </div>
+              <div class="row-name-block">
+                <p class="row-name">Medication</p>
+              </div>
+            </td>
+            <td>
+              <button class="permission-checkbox checked"></button>
+            </td>
+            <td>
+              <button class="permission-checkbox"></button>
+            </td>
+            <td>
+              <button class="permission-checkbox"></button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="row-icon-block">
+                <img src="/assets/img/diagnosis.png" class="row-icon">
+              </div>
+              <div class="row-name-block">
+                <p class="row-name">Diagnosis</p>
+              </div>
+            </td>
+            <td>
+              <button class="permission-checkbox checked"></button>
+            </td>
+            <td>
+              <button class="permission-checkbox"></button>
+            </td>
+            <td>
+              <button class="permission-checkbox"></button>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="row-icon-block">
+                <img src="/assets/img/symptoms.png" class="row-icon">
+              </div>
+              <div class="row-name-block">
+                <p class="row-name">Symptoms</p>
+              </div>
+            </td>
+            <td>
+              <button class="permission-checkbox checked"></button>
+            </td>
+            <td>
+              <button class="permission-checkbox"></button>
+            </td>
+            <td>
+              <button class="permission-checkbox"></button>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="row-icon-block">
+                <img src="/assets/img/diet.png" class="row-icon">
+              </div>
+              <div class="row-name-block">
+                <p class="row-name">Diet</p>
+              </div>
+            </td>
+            <td>
+              <button class="permission-checkbox checked"></button>
+            </td>
+            <td>
+              <button class="permission-checkbox checked"></button>
+            </td>
+            <td>
+              <button class="permission-checkbox"></button>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="row-icon-block">
+                <img src="/assets/img/exercise.png" class="row-icon">
+              </div>
+              <div class="row-name-block">
+                <p class="row-name">Exercise</p>
+              </div>
+            </td>
+            <td>
+              <button class="permission-checkbox checked"></button>
+            </td>
+            <td>
+              <button class="permission-checkbox checked"></button>
+            </td>
+            <td>
+              <button class="permission-checkbox"></button>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="row-icon-block">
+                <img src="/assets/img/appointment.png" class="row-icon">
+              </div>
+              <div class="row-name-block">
+                <p class="row-name">Appointments</p>
+              </div>
+            </td>
+            <td>
+              <button class="permission-checkbox checked"></button>
+            </td>
+            <td>
+              <button class="permission-checkbox checked"></button>
+            </td>
+            <td>
+              <button class="permission-checkbox checked"></button>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="row-icon-block">
+                <img src="/assets/img/transport.png" class="row-icon">
+              </div>
+              <div class="row-name-block">
+                <p class="row-name">Transport</p>
+              </div>
+            </td>
+            <td>
+              <button class="permission-checkbox checked"></button>
+            </td>
+            <td>
+              <button class="permission-checkbox checked"></button>
+            </td>
+            <td>
+              <button class="permission-checkbox checked"></button>
+            </td>
+          </tr>
         </table>
       </div>
 
       <div class="button-div">
-        <button id="confirm-permissions-button" type="button" class="btn btn-primary form-control submit">Confirm permission settings</button><br />
+        <button id="confirm-permissions-button" type="button" class="btn btn-primary form-control submit">
+          Confirm permission settings
+        </button>
+        <br />
       </div>
     </div>
 
@@ -70,6 +225,10 @@
     $(document).ready(function(){
       $("#confirm-permissions-button").click(function(e){
         window.location.href = 'circles.html';
+      });
+
+      $(".permission-checkbox").click(function(e){
+        $(this).toggleClass("checked");
       });
     });
   </script>
