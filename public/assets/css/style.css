@@ -53,10 +53,21 @@ a:focus {
 	color: #0b1033;
 }
 
+a.site-btn, a.site-btn2 {
+	display: inline-block;
+	overflow: hidden;
+	position: relative;
+}
+
 li,
 ul {
 	margin: 0;
 	padding: 0;
+}
+
+button {
+	border-radius: 0 !important;
+	overflow: hidden;
 }
 
 /*------------------------
@@ -83,6 +94,7 @@ ul.navbar-right > li:not(:first-child) {
 
 a.navbar-brand {
 	padding: 10px;
+	height: 70px;
 }
 
 a.navbar-brand > img {
@@ -129,6 +141,30 @@ button.navbar-toggle.collapsed::before {
 	#mobilemenu.in {
 		visibility: hidden;
 	}
+}
+
+/*------------------------
+	Ripple css
+--------------------------*/
+.ripple {
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+	/* background: rgba(0,0,0, 0.4); */
+  transform: scale(0);
+  opacity: 1;
+}
+.rippleEffect {
+  animation: rippleDrop .6s linear;
+	position: absolute;
+}
+
+@keyframes rippleDrop {
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
 }
 
 /*------------------------
@@ -292,10 +328,8 @@ button.navbar-toggle.collapsed::before {
 
 .site-btn:hover,
 .site-btn:focus {
-  /*
 	text-decoration: none;
 	outline: none;
-  */
 }
 
 .site-btn.fullwidth, .site-btn2.fullwidth {
