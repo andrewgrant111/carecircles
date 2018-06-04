@@ -1,8 +1,3 @@
-nav.navbar {
-  display: inline-block;
-  width: 100%;
-}
-
 .outer-circles-box {
   height: 500px;
   width: 250px;
@@ -151,4 +146,8 @@ div.next {
 .cards .card .card-content {
   width: auto;
   display: block;
+}
+
+.modal-content.modal-lg.circlesModalDialog {
+  width: 90%;
 }
