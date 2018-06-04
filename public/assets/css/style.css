@@ -50,7 +50,7 @@ a:hover,
 a:focus {
 	text-decoration: none;
 	outline: none;
-	color: #0b1033;
+	color: #000000;
 }
 
 a.site-btn, a.site-btn2 {
@@ -306,6 +306,8 @@ button.navbar-toggle.collapsed::before {
 	min-width: 100px;
 	text-align: center;
 	border: none;
+	overflow: hidden;
+	position: relative;
 }
 
 .site-btn2 {
@@ -340,6 +342,7 @@ button.navbar-toggle.collapsed::before {
 .site-btn:focus {
 	text-decoration: none;
 	outline: none;
+	color: #000000;
 }
 
 .site-btn.fullwidth, .site-btn2.fullwidth {
