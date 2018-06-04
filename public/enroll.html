@@ -61,6 +61,8 @@
           </div>
         </div>
       </form>
+      <div class="confirmPatient">
+      </div>
         <!-- <div class="form-group">
           <label for="full_name">Full Name</label>
           <input type="text" class="form-control" id="full_name" placeholder="First and Last Name">
@@ -159,20 +161,41 @@
             success: function(response) {
               console.log(response);
               const patientObject = response;
-              document.querySelector('#full_name').value = patientObject.name;
-              document.querySelector('#address').value = patientObject.address;
-              document.querySelector('#dob').value = patientObject.dob;
+              // document.querySelector('#full_name').value = patientObject.name;
+              // document.querySelector('#address').value = patientObject.address;
+              // document.querySelector('#dob').value = patientObject.dob;
               document.querySelector('#phone').value = patientObject.phoneNumber;
-              if (patientObject.sex == 'Male'){
-                document.querySelector('#sexChoice1').checked = true;
-              } else if (patientObject.sex == 'Female') {
-                document.querySelector('#sexChoice2').checked = true;
-              } else if (patientObject.sex == 'Nonbinary') {
-                document.querySelector('#sexChoice3').checked = true;
-              }
+              // if (patientObject.sex == 'Male'){
+              //   document.querySelector('#sexChoice1').checked = true;
+              // } else if (patientObject.sex == 'Female') {
+              //   document.querySelector('#sexChoice2').checked = true;
+              // } else if (patientObject.sex == 'Nonbinary') {
+              //   document.querySelector('#sexChoice3').checked = true;
+              // }
+              document.querySelector('.confirmPatient').innerHTML = `
+              Are these details correct? If not, <a href="">report an error</a>.
+              <div class="confirmPatientDetails">
+                <p>
+                  <h5>Full Name</h5>
+                  ${patientObject.name}
+                </p>
+                <p>
+                  <h5>Date of Birth</h5>
+                  ${patientObject.dob}
+                </p>
+                <p>
+                  <h5>Sex</h5>
+                  ${patientObject.sex}
+                </p>
+                <p>
+                  <h5>Mailing Address</h5>
+                  ${patientObject.address}
+                </p>
+              </div>
+              `
             },
             error: function(response) {
-              alert('error');
+              alert('Error: Patient not found');
             }
           });
         });
