@@ -172,6 +172,8 @@
               // } else if (patientObject.sex == 'Nonbinary') {
               //   document.querySelector('#sexChoice3').checked = true;
               // }
+              const options = { year: 'numeric', month: 'long', day: 'numeric' };
+              const patientDOB  = new Date(patientObject.dob);
               document.querySelector('.confirmPatient').innerHTML = `
               Are these details correct? If not, <a href="#"><strong>report an error</strong></a>.
               <div class="confirmPatientDetails">
@@ -181,7 +183,7 @@
                 </p>
                 <p>
                   <h5>Date of Birth</h5>
-                  ${patientObject.dob}
+                  ${patientDOB.toLocaleDateString("en-US", options)}
                 </p>
                 <p>
                   <h5>Sex</h5>
