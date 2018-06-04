@@ -339,10 +339,21 @@ button.navbar-toggle.collapsed::before {
 }
 
 .site-btn:hover,
-.site-btn:focus {
+.site-btn:focus,
+.site-btn2:hover,
+.site-btn2:focus {
 	text-decoration: none;
 	outline: none;
 	color: #000000;
+}
+
+.site-btn:hover {
+	background-color: #68a9ca;
+	/* #4697be */
+}
+
+.site-btn2:hover {
+	background-color: #bfbfbf;
 }
 
 .site-btn.fullwidth, .site-btn2.fullwidth {
