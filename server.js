@@ -147,7 +147,7 @@ var patients = [{
   "phoneNumber": "(778) 876-5432",
   "address": "123 Evergreen Terrace, Vancouver, BC",
   "dob": "1948-06-01",
-  "gender": "Female"
+  "sex": "Female"
 }];
 
 var circleMembers = {

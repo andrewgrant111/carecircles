@@ -71,23 +71,23 @@
           <input type="date" class="form-control" id="dob" placeholder="YYYY-MM-DD">
         </div>
         <div class="form-group">
-          <legend>Gender</legend>
-          <div class="row genderOptions">
-            <div class="col-xs-4 genderOptionsElement">
-              <label for="genderChoice1" class="radio-inline">
-                <input type="radio" name="gender" value="Male" id="genderChoice1">
+          <legend>Sex</legend>
+          <div class="row sexOptions">
+            <div class="col-xs-4 sexOptionsElement">
+              <label for="sexChoice1" class="radio-inline">
+                <input type="radio" name="sex" value="Male" id="sexChoice1">
                 Male
               </label>
             </div>
-            <div class="col-xs-4 genderOptionsElement">
-              <label for="genderChoice2" class="radio-inline">
-                <input type="radio" name="gender" value="Female" id="genderChoice2">
+            <div class="col-xs-4 sexOptionsElement">
+              <label for="sexChoice2" class="radio-inline">
+                <input type="radio" name="sex" value="Female" id="sexChoice2">
                 Female
               </label>
             </div>
-            <div class="col-xs-4 genderOptionsElement">
-              <label for="genderChoice3" class="radio-inline">
-                <input type="radio" name="gender" value="Nonbinary" id="genderChoice3">
+            <div class="col-xs-4 sexOptionsElement">
+              <label for="sexChoice3" class="radio-inline">
+                <input type="radio" name="sex" value="Nonbinary" id="sexChoice3">
                 Non-binary
               </label>
             </div>
@@ -173,12 +173,12 @@
               document.querySelector('#address').value = patientObject.address;
               document.querySelector('#dob').value = patientObject.dob;
               document.querySelector('#phone').value = patientObject.phoneNumber;
-              if (patientObject.gender == 'Male'){
-                document.querySelector('#genderChoice1').checked = true;
-              } else if (patientObject.gender == 'Female') {
-                document.querySelector('#genderChoice2').checked = true;
-              } else if (patientObject.gender == 'Nonbinary') {
-                document.querySelector('#genderChoice3').checked = true;
+              if (patientObject.sex == 'Male'){
+                document.querySelector('#sexChoice1').checked = true;
+              } else if (patientObject.sex == 'Female') {
+                document.querySelector('#sexChoice2').checked = true;
+              } else if (patientObject.sex == 'Nonbinary') {
+                document.querySelector('#sexChoice3').checked = true;
               }
             },
             error: function(response) {
@@ -197,7 +197,7 @@
               data: {
                 phone: $('#phone').val(),
                 email: $('#email').val(),
-                gender: $('input[name=gender]:checked').val()
+                // sex: $('input[name=sex]:checked').val()
               },
               success: function(response) {
                 window.location.href = "circles.html";
