@@ -141,8 +141,22 @@ td {
   display: block;
 }
 
-.permission-checkbox.checked {
-  background: url("../img/checkmark.png");
+.permission-checkbox.checked.inner {
+  background: url("../img/checkmark-inner.png");
+  background-repeat: no-repeat;
+  background-size: 40px 40px;
+  background-position: center;
+}
+
+.permission-checkbox.checked.outer {
+  background: url("../img/checkmark-outer.png");
+  background-repeat: no-repeat;
+  background-size: 40px 40px;
+  background-position: center;
+}
+
+.permission-checkbox.checked.extended {
+  background: url("../img/checkmark-extended.png");
   background-repeat: no-repeat;
   background-size: 40px 40px;
   background-position: center;

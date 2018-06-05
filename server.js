@@ -10,7 +10,9 @@ var nodemailer = require('nodemailer');
 var router = express.Router();
 
 var app = express();
-app.use(express.static(__dirname + "/public"));
+app.use(express.static(__dirname + "/public", {
+  extensions: ['html','htm']
+}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }))
 
@@ -18,6 +20,18 @@ var server = app.listen(process.env.PORT || 80, function () {
   var port = server.address().port;
   console.log("App now running on port", port);
 });
+
+// app.get("/circles", function(req,res) {
+//   res.sendFile(__dirname + "/public/circles.html");
+// });
+//
+// app.get("/permissions", function(req,res) {
+//   res.sendFile(__dirname + "/public/permissions.html");
+// });
+//
+// app.get("/disagree", function(req,res) {
+//   res.sendFile(__dirname + "/public/permissions.html");
+// });
 
 // var auth = function (req, res, next) {
 //   function unauthorized(res) {
