@@ -106,7 +106,13 @@
         <div class="form-group">
           <label for="profile_photo">Profile Photo</label>
           <!-- <input type="file" id="profile_photo" style="display:none"/> -->
-          <div id="OpenImgUpload" class="text-center"><a href="" id="uploadtext">Upload from computer</a></div>
+          <div id="profile_photo_row" style="display: flex; justify-content: flex-start; flex-direction: row; align-items: flex-end;">
+            <div id="OpenImgUpload" class="text-center">
+              <a href="" id="uploadtext">
+                Upload from computer
+              </a>
+            </div>
+          </div>
         </div>
         <div class="form-group">
           <label for="phone">Phone</label>
@@ -225,11 +231,16 @@
           $("#uploadtext").click(function(e) {
             e.preventDefault();
           })
+          let uploadClick = false;
           $("#OpenImgUpload").click(function(e) {
             // $("#profile_photo").trigger('click');
-            $("#OpenImgUpload").css("background-image", "url(/assets/img/edna.png)");
-            $('#uploadtext').css("visibility", "hidden");
-          })
+            setTimeout( () => {$("#OpenImgUpload").css("background-image", "url(/assets/img/edna.png)")}, 500);
+            $("#uploadtext").css("visibility", "hidden");
+            if (!uploadClick) {
+              setTimeout( () => {$("#profile_photo_row").append(`<div>Great pic!</div>`)}, 1000);
+              uploadClick = true;
+            }
+          });
         });
 
       });
