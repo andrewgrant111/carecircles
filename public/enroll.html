@@ -105,8 +105,8 @@
       <form action="/patients/new" method="POST">
         <div class="form-group">
           <label for="profile_photo">Profile Photo</label>
-          <input type="file" id="profile_photo" style="display:none"/>
-          <div id="OpenImgUpload"><a href="" id="uploadtext">Upload from computer</a></div>
+          <!-- <input type="file" id="profile_photo" style="display:none"/> -->
+          <div id="OpenImgUpload" class="text-center"><a href="" id="uploadtext">Upload from computer</a></div>
         </div>
         <div class="form-group">
           <label for="phone">Phone</label>
@@ -226,7 +226,9 @@
             e.preventDefault();
           })
           $("#OpenImgUpload").click(function(e) {
-            $("#profile_photo").trigger('click');
+            // $("#profile_photo").trigger('click');
+            $("#OpenImgUpload").css("background-image", "url(/assets/img/edna.png)");
+            $('#uploadtext').css("visibility", "hidden");
           })
         });
 
