@@ -801,6 +801,18 @@ button.navbar-toggle.collapsed::before {
 	padding-left: 5px;
 }
 
+.intro-video a:hover {
+	color: #5eece3;
+	box-shadow: 0px 0px 9px 4px #10475d;
+  animation: glow 1.5s linear infinite alternate;
+}
+
+@keyframes glow{
+  to {
+    box-shadow: 0px 2px 20px 10px #5eece3;
+  }
+}
+
 
 /*------------------------
   Testimonial section
