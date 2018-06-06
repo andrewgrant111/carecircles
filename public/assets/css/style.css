@@ -179,6 +179,37 @@ button.navbar-toggle.collapsed::before {
 }
 
 /*------------------------
+	Profile photo css
+--------------------------*/
+
+#profile_photo_row {
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: row;
+	align-items: flex-end;
+}
+
+#modal_profile_photo_row {
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	align-items: flex-end;
+}
+
+#OpenImgUpload {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background-color: #d8d8d8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/*------------------------
 	Helper css
 --------------------------*/
 .fix {
@@ -447,7 +478,7 @@ button.navbar-toggle.collapsed::before {
 
 .modal-content {
 	position:absolute;
-	top: 100px;
+	top: 50px;
 }
 
 /*------------------

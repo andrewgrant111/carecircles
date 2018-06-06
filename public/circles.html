@@ -90,12 +90,23 @@
     <div class="modal fade" id="add-member" role="dialog">
       <div class="modal-dialog modal-lg">
         <div class="modal-content modal-lg circlesModalDialog">
-          <div class="modal-header">
-            <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+          <!-- <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
             <h3 class="modal-title">Add Member</h3>
-          </div>
+          </div> -->
           <div class="modal-body">
             <form id="new-member-form" class="form" action="/circlemembers/inner" role="form" method="POST" >
+              <div class="form-group">
+                <!-- <label for="profile_photo">Profile Photo</label> -->
+                <!-- <input type="file" id="profile_photo" style="display:none"/> -->
+                <div id="modal_profile_photo_row">
+                  <div id="OpenImgUpload" class="text-center">
+                    <a href="" id="uploadtext">
+                      Upload from computer
+                    </a>
+                  </div>
+                </div>
+              </div>
               <div class="form-group">
                 <label for="name">Name</label>
                 <input class="form-control" type="text" name="name" placeholder="" required="required">
@@ -112,9 +123,7 @@
                 <label for="email">Email</label>
                 <input class="form-control" type="text" name="email" placeholder="" required="required">
               </div>
-              <div class="modal-footer">
-                <button id="submit-member-btn" type="submit" class="site-btn btn btn-default">Add New Member</button>
-              </div>
+              <button id="submit-member-btn" type="submit" class="site-btn fullwidth">Add New Member</button>
             </form>
           </div>
 
@@ -181,6 +190,8 @@
               alert('error');
             }
           });
+          $("#OpenImgUpload").css("background-image", "");
+          $("#uploadtext").css("visibility", "visible");
         });
         $("#nextbutton").click(function(e){
           console.log("nextbutton");
@@ -188,6 +199,8 @@
             $(".inner-circle").removeClass("inner-color");
             $(".outer-circle").addClass("outer-color");
             $("#cards").empty();
+            $("#OpenImgUpload").css("background-image", "");
+            $("#uploadtext").css("visibility", "visible");
             $("#circle-panel-header").text("Members of My Outer Circle");
             $("#add-member-btn").text("Add Someone to My Outer Circle");
             $("#circle-explanation").text("By default, my outer circle has permissions to see my diet, exercise, appointments, and transport.");
@@ -196,6 +209,8 @@
             $(".outer-circle").removeClass("outer-color");
             $(".extended-circle").addClass("extended-color");
             $("#cards").empty();
+            $("#OpenImgUpload").css("background-image", "");
+            $("#uploadtext").css("visibility", "visible");
             $("#circle-panel-header").text("Members of My Extended Circle");
             $("#add-member-btn").text("Add Someone to My Extended Circle");
             $("#circle-explanation").text("By default, my extended circle has permissions to see my appointments, and transport.");
@@ -205,6 +220,20 @@
             window.location.href = 'summary';
           }
           e.preventDefault();
+        });
+        $("#uploadtext").click(function(e) {
+          e.preventDefault();
+        })
+        $("#OpenImgUpload").click(function(e) {
+          // $("#profile_photo").trigger('click');
+          if (circle === 1 ) {
+            setTimeout( () => {$("#OpenImgUpload").css("background-image", "url(/assets/img/susie.png)")}, 500);
+          } else if (circle === 2) {
+            setTimeout( () => {$("#OpenImgUpload").css("background-image", "url(/assets/img/george.png)")}, 500);
+          } else if (circle === 3) {
+            setTimeout( () => {$("#OpenImgUpload").css("background-image", "url(/assets/img/barry.png)")}, 500);
+          }
+          $("#uploadtext").css("visibility", "hidden");
         });
       });
     </script>

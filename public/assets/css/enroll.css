@@ -58,19 +58,6 @@ label {
   height: 300px;
 }
 
-#OpenImgUpload {
-  height: 150px;
-  width: 150px;
-  border-radius: 100%;
-  background-color: #d8d8d8;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
 .row.sexOptions {
   padding: 0 1em;
 }
