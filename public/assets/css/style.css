@@ -1,19 +1,26 @@
-/* =================================
-------------------------------------
-	Labs - Design Studio
-	Version: 1.0
- ------------------------------------
- ====================================*/
-
 
 /*----------------------------------------*/
 /*  1.  Theme default CSS
 /*----------------------------------------*/
+
+/*----------------------------------------*/
+/*  FONT SIZES
+/*  1.000 em = 16 px = 12 pt
+/*  1.500 em = 24 px = 18 pt
+/*  2.000 em = 32 px = 24 pt
+/*  Theme Colour 1 (Blue):    #0797c1
+/*  Theme Colour 2 (Cyan):    #5eece3
+/*  Theme Colour 3 (Navy):    #10475d
+/*  Theme Colour 4 (Orange):  #f58a41
+/*  Theme Colour 5 (White):   #fff
+/*  Gray Text/Buttons:        #
+/*  Black Text:               #000
+/*----------------------------------------*/
+
 html,
 body {
 	height: 100%;
 	font-family: "Helvetica", sans-serif;
-	font-size: 18px;
 }
 
 img {
@@ -43,7 +50,6 @@ h2 {
 p {
 	font-size: 18px;
 	color: #000000;
-	/* line-height: 30px; */
 	font-family: "Helvetica", sans-serif;
 }
 
@@ -51,7 +57,7 @@ a:hover,
 a:focus {
 	text-decoration: none;
 	outline: none;
-	color: #000000;
+	color: #0b1033;
 }
 
 a.site-btn, a.site-btn2 {
@@ -73,8 +79,6 @@ button {
 
 legend {
     display: block;
-    /* padding-left: 2px;
-    padding-right: 2px; */
     border: none;
 		font-size: 18px;
 		font-weight: 700;
@@ -338,8 +342,6 @@ button.navbar-toggle.collapsed::before {
 	min-width: 100px;
 	text-align: center;
 	border: none;
-	overflow: hidden;
-	position: relative;
 }
 
 .site-btn2 {
@@ -371,21 +373,9 @@ button.navbar-toggle.collapsed::before {
 }
 
 .site-btn:hover,
-.site-btn:focus,
-.site-btn2:hover,
-.site-btn2:focus {
+.site-btn:focus {
 	text-decoration: none;
 	outline: none;
-	color: #000000;
-}
-
-.site-btn:hover {
-	background-color: #68a9ca;
-	/* #4697be */
-}
-
-.site-btn2:hover {
-	background-color: #bfbfbf;
 }
 
 .site-btn.fullwidth, .site-btn2.fullwidth {
