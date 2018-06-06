@@ -76,6 +76,13 @@ ul {
 button {
 	border-radius: 0 !important;
 	overflow: hidden;
+	position: relative;
+}
+
+button:hover, button:focus {
+	text-decoration: none;
+	outline: none;
+	color: #0b1033;
 }
 
 legend {
