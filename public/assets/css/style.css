@@ -1145,15 +1145,51 @@ button.navbar-toggle.collapsed::before {
 /*------------------------
 	Footer section
 --------------------------*/
+.footer-wrapper {
+	/* background-color: #0797c1; */
+	background: #10475d;
+}
+
 .footer-section {
-	background: #220c3b;
-	text-align: center;
+	padding: 50px 0;
+	color: #ffffff;
+	font-size: 16px;
+	letter-spacing: 1px;
+	line-height: 1.75em;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: center;
+	align-items: stretch;
 }
 
 .footer-section h2 {
-	color: #6a23b5;
-	font-size: 14px;
-	padding: 18px 0;
+	text-align: left;
+	font-weight: bold;
+	color: #ffffff;
+	font-size: 18px;
+	letter-spacing: 1px;
+	line-height: 1.75em;
+}
+
+.footer-group {
+	min-width: 130px;
+	max-width: 220px;
+	padding-bottom: 50px;
+	flex-grow: 1;
+}
+
+.footer-logo {
+	width: 130px;
+	margin: 0.75em 0;
+}
+
+.footer-group a {
+	color: #ffffff;
+}
+
+.footer-group a:hover {
+	color: #f58a41;
 }
 
 /*=========================
