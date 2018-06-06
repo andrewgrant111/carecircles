@@ -109,7 +109,7 @@
           <div id="profile_photo_row">
             <div id="OpenImgUpload" class="text-center">
               <a href="" id="uploadtext">
-                Upload from computer
+                <strong>Upload photo from computer</strong>
               </a>
             </div>
           </div>
@@ -237,7 +237,7 @@
             setTimeout( () => {$("#OpenImgUpload").css("background-image", "url(/assets/img/edna.png)")}, 500);
             $("#uploadtext").css("visibility", "hidden");
             if (!uploadClick) {
-              setTimeout( () => {$("#profile_photo_row").append(`<div>Great pic!</div>`)}, 1000);
+              setTimeout( () => {$("#profile_photo_row").append(`<div style="color: green;">Great pic!</div>`)}, 1000);
               uploadClick = true;
             }
           });
