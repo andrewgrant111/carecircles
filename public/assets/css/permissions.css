@@ -128,13 +128,18 @@ td {
   height: 80px;
 }
 
+nav.navbar {
+  margin-bottom: 0;
+}
+
 .permission-checkbox {
-  height: 100%;
-  width: 100%;
-  border: 0;
+  height: 60px;
+  width: 60px;
   outline: none;
   padding: 0;
-  display: block;
+  display: inline-block;
+  border: 2px solid darkgrey;
+  border-radius: 10px;
 }
 
 .permission-checkbox.checked.inner {

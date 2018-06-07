@@ -54,12 +54,12 @@
               <p class="header-label">Permissions</p>
             </th>
             <th>
-              <img src="/assets/img/InnerCircle.png" class="header-icon">
+              <img src="/assets/img/InnerCircleBigger.png" class="header-icon">
               <p class="header-label">Inner</p>
               <p>Personal, sensitive, and trusted</p>
             </th>
             <th>
-              <img src="/assets/img/OuterCircle.png" class="header-icon">
+              <img src="/assets/img/OuterCircleBigger.png" class="header-icon">
               <p class="header-label">Outer</p>
               <p>Diet, nutrition, and lifestyle</p>
             </th>
@@ -80,13 +80,13 @@
               </div>
             </td>
             <td>
-              <button class="permission-checkbox inner checked"></button>
+              <button class="permission-checkbox inner checked default" id="medication-inner"></button>
             </td>
             <td>
-              <button class="permission-checkbox outer"></button>
+              <button class="permission-checkbox outer" id="medication-outer"></button>
             </td>
             <td>
-              <button class="permission-checkbox extended"></button>
+              <button class="permission-checkbox extended" id="medication-extended"></button>
             </td>
           </tr>
           <tr>
@@ -99,13 +99,13 @@
               </div>
             </td>
             <td>
-              <button class="permission-checkbox inner checked"></button>
+              <button class="permission-checkbox inner checked default" id="diagnosis-inner"></button>
             </td>
             <td>
-              <button class="permission-checkbox outer"></button>
+              <button class="permission-checkbox outer" id="diagnosis-outer"></button>
             </td>
             <td>
-              <button class="permission-checkbox extended"></button>
+              <button class="permission-checkbox extended" id="diagnosis-extended"></button>
             </td>
           </tr>
 
@@ -119,13 +119,13 @@
               </div>
             </td>
             <td>
-              <button class="permission-checkbox inner checked"></button>
+              <button class="permission-checkbox inner checked default" id="symptoms-inner"></button>
             </td>
             <td>
-              <button class="permission-checkbox outer"></button>
+              <button class="permission-checkbox outer" id="symptoms-outer"></button>
             </td>
             <td>
-              <button class="permission-checkbox extended"></button>
+              <button class="permission-checkbox extended" id="symptoms-extended"></button>
             </td>
           </tr>
 
@@ -139,13 +139,13 @@
               </div>
             </td>
             <td>
-              <button class="permission-checkbox inner checked"></button>
+              <button class="permission-checkbox inner checked default" id="diet-inner"></button>
             </td>
             <td>
-              <button class="permission-checkbox outer checked"></button>
+              <button class="permission-checkbox outer checked default" id="diet-outer"></button>
             </td>
             <td>
-              <button class="permission-checkbox extended"></button>
+              <button class="permission-checkbox extended" id="diet-extended"></button>
             </td>
           </tr>
 
@@ -159,13 +159,13 @@
               </div>
             </td>
             <td>
-              <button class="permission-checkbox inner checked"></button>
+              <button class="permission-checkbox inner checked default" id="exercise-inner"></button>
             </td>
             <td>
-              <button class="permission-checkbox outer checked"></button>
+              <button class="permission-checkbox outer checked default" id="exercise-outer"></button>
             </td>
             <td>
-              <button class="permission-checkbox extended"></button>
+              <button class="permission-checkbox extended" id="exercise-extended"></button>
             </td>
           </tr>
 
@@ -179,13 +179,13 @@
               </div>
             </td>
             <td>
-              <button class="permission-checkbox inner checked"></button>
+              <button class="permission-checkbox inner checked default" id="appointments-inner"></button>
             </td>
             <td>
-              <button class="permission-checkbox outer checked"></button>
+              <button class="permission-checkbox outer checked default" id="appointments-outer"></button>
             </td>
             <td>
-              <button class="permission-checkbox extended checked"></button>
+              <button class="permission-checkbox extended checked default" id="appointments-extended"></button>
             </td>
           </tr>
 
@@ -199,13 +199,13 @@
               </div>
             </td>
             <td>
-              <button class="permission-checkbox inner checked"></button>
+              <button class="permission-checkbox inner checked default" id="transport-inner"></button>
             </td>
             <td>
-              <button class="permission-checkbox outer checked"></button>
+              <button class="permission-checkbox outer checked default" id="transport-outer"></button>
             </td>
             <td>
-              <button class="permission-checkbox extended checked"></button>
+              <button class="permission-checkbox extended checked default" id="transport-extended"></button>
             </td>
           </tr>
         </table>
@@ -235,9 +235,69 @@
         window.location.href = 'circles';
       });
 
+      $("#restore-default-permissions").click(function(e){
+        $(".checked").removeClass("checked");
+        $(".default").addClass("checked");
+      });
+
       $(".permission-checkbox").click(function(e){
         $(this).toggleClass("checked");
+        var checks = getChecks();
+        console.log(checks);
+        $.ajax({
+          type: "POST",
+          url: 'permissions',
+          data: checks,
+          success: function(result) {
+
+          },
+          error: function(result) {
+            alert('error');
+          }
+        });
+
+        //console.log(getChecks());
       });
+
+      getChecks = function(){
+        var checks = [];
+        checks.medication = {
+          "inner": $("#medication-inner").hasClass("checked"),
+          "outer": $("#medication-outer").hasClass("checked"),
+          "extended": $("#medication-extended").hasClass("checked")
+        };
+        checks.diagnosis = {
+          "inner": $("#diagnosis-inner").hasClass("checked"),
+          "outer": $("#diagnosis-outer").hasClass("checked"),
+          "extended": $("#diagnosis-extended").hasClass("checked")
+        };
+        checks.symptoms = {
+          "inner": $("#symptoms-inner").hasClass("checked"),
+          "outer": $("#symptoms-outer").hasClass("checked"),
+          "extended": $("#symptoms-extended").hasClass("checked")
+        };
+        checks.diet = {
+          "inner": $("#diet-inner").hasClass("checked"),
+          "outer": $("#diet-outer").hasClass("checked"),
+          "extended": $("#diet-extended").hasClass("checked")
+        };
+        checks.exercise = {
+          "inner": $("#exercise-inner").hasClass("checked"),
+          "outer": $("#exercise-outer").hasClass("checked"),
+          "extended": $("#exercise-extended").hasClass("checked")
+        };
+        checks.appointments = {
+          "inner": $("#appointments-inner").hasClass("checked"),
+          "outer": $("#appointments-outer").hasClass("checked"),
+          "extended": $("#appointments-extended").hasClass("checked")
+        };
+        checks.transport = {
+          "inner": $("#transport-inner").hasClass("checked"),
+          "outer": $("#transport-outer").hasClass("checked"),
+          "extended": $("#transport-extended").hasClass("checked")
+        };
+        return checks;
+      }
     });
   </script>
 </html>
