@@ -97,6 +97,10 @@ legend {
 	Navbar css
 --------------------------*/
 
+nav .container {
+	height: 70px;
+}
+
 nav.navbar-default {
 	font-size: 24px;
 	letter-spacing: 1.5px;
