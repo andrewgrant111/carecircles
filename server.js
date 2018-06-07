@@ -246,6 +246,12 @@ app.get("/circlemembers", function(req,res) {
 app.post("/update", function(req,res) {
   patients.push(req.body);
 });
+
+app.post("/permissions", function(req,res) {
+  console.log(req.body);
+  res.status(200).send();
+});
+
 //
 // app.post("/email", function(req, res) {
 //   // Contact Form send email using Zoho SMTP Server and NodeMailer
@@ -276,18 +282,19 @@ app.post("/update", function(req,res) {
 //     });
 // });
 
-app.post("/sms", function(req,res){
-  console.log(req.body.phone);
-  var accountSid = process.env.TWILIO_SID; // Your Account SID from www.twilio.com/console
-  var authToken = process.env.TWILIO_TOKEN;   // Your Auth Token from www.twilio.com/console
 
-  var twilio = require('twilio');
-  var client = new twilio(accountSid, authToken);
-
-  client.messages.create({
-      body: 'Hello from Node',
-      to: req.body.phone,  // Text this number
-      from: process.env.TWILIO_PHONE // From a valid Twilio number
-  })
-  .then((message) => console.log(message.sid));
-});
+// app.post("/sms", function(req,res){
+//   console.log(req.body.phone);
+//   var accountSid = process.env.TWILIO_SID; // Your Account SID from www.twilio.com/console
+//   var authToken = process.env.TWILIO_TOKEN;   // Your Auth Token from www.twilio.com/console
+//
+//   var twilio = require('twilio');
+//   var client = new twilio(accountSid, authToken);
+//
+//   client.messages.create({
+//       body: 'Hello from Node',
+//       to: req.body.phone,  // Text this number
+//       from: process.env.TWILIO_PHONE // From a valid Twilio number
+//   })
+//   .then((message) => console.log(message.sid));
+// });
