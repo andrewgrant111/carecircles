@@ -19,12 +19,16 @@
   margin: auto;
   position: absolute;
   left: -62px;
-  top: 194px;
+  top: 197px;
   border-radius: 50%;
 }
 
+.circle-image-topfix {
+  top: 192px;
+}
+
 .extended-circle {
-	border-radius:  250px;;
+	border-radius:  100%;
   background-color: #FFFFFF;
   height: 500px;
   width: 500px;
@@ -32,20 +36,20 @@
 }
 
 .outer-circle {
-	border-radius:  175px;
+	border-radius:  100%;
   background-color: #FFFFFF;
-  height: 350px;
-  width: 350px;
-  top: 73px;
+  height: 375px;
+  width: 375px;
+  top: 63px;
 }
 
 .inner-circle {
-	border-radius:  100px;
+	border-radius:  100%;
   background-color: #FFFFFF;
-  height: 200px;
-  width: 200px;
+  height: 250px;
+  width: 250px;
   position: relative;
-  top: 72px;
+  top: 62px;
 }
 
 .cards, .next {

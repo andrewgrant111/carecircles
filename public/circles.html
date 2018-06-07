@@ -148,11 +148,13 @@
         </div>';
       $(document).ready(function(){
         var circle = 1;
+
         $("#add-member-btn").click(function(e){
           e.preventDefault();
           console.log("test");
             $("#add-member").modal();
         });
+
         $("#submit-member-btn").click(function(e){
           e.preventDefault();
           console.log("submit member button pressed");
@@ -193,37 +195,83 @@
           $("#OpenImgUpload").css("background-image", "");
           $("#uploadtext").css("visibility", "visible");
         });
+
+        var selectInnerCircle = function(){
+          $(".inner-circle").addClass("inner-color");
+          $(".outer-circle").removeClass("outer-color");
+          $(".extended-circle").removeClass("extended-color");
+          $("#cards").empty();
+          $("#OpenImgUpload").css("background-image", "");
+          $("#uploadtext").css("visibility", "visible");
+          $("#circle-panel-header").text("Members of My Inner Circle");
+          $("#add-member-btn").text("Add Someone to My Inner Circle");
+          $("#circle-explanation").text("By default, my inner circle has permissions to see my medication, diagnosis, symptoms, diet, exercise, appointments, and transport.");
+          $("#nextbutton").text("Next Circle");
+          $(".circle-image").removeClass("circle-image-topfix");
+          circle = 1;
+        }
+
+        var selectOuterCircle = function() {
+          $(".inner-circle").removeClass("inner-color");
+          $(".outer-circle").addClass("outer-color");
+          $(".extended-circle").removeClass("extended-color");
+          $("#cards").empty();
+          $("#OpenImgUpload").css("background-image", "");
+          $("#uploadtext").css("visibility", "visible");
+          $("#circle-panel-header").text("Members of My Outer Circle");
+          $("#add-member-btn").text("Add Someone to My Outer Circle");
+          $("#circle-explanation").text("By default, my outer circle has permissions to see my diet, exercise, appointments, and transport.");
+          $("#nextbutton").text("Next Circle");
+          $(".circle-image").addClass("circle-image-topfix");
+          circle = 2;
+        }
+
+        var selectExtendedCircle = function() {
+          $(".inner-circle").removeClass("inner-color");
+          $(".outer-circle").removeClass("outer-color");
+          $(".extended-circle").addClass("extended-color");
+          $("#cards").empty();
+          $("#OpenImgUpload").css("background-image", "");
+          $("#uploadtext").css("visibility", "visible");
+          $("#circle-panel-header").text("Members of My Extended Circle");
+          $("#add-member-btn").text("Add Someone to My Extended Circle");
+          $("#circle-explanation").text("By default, my extended circle has permissions to see my appointments, and transport.");
+          $("#nextbutton").text("Go to Summary");
+          $(".circle-image").addClass("circle-image-topfix");
+          circle = 3;
+        }
+
+        $(".inner-circle").click(function(e){
+          selectInnerCircle();
+          e.stopPropagation();
+        });
+
+        $(".outer-circle").click(function(e){
+          selectOuterCircle();
+          e.stopPropagation();
+        });
+
+        $(".extended-circle").click(function(e){
+          selectExtendedCircle();
+          e.stopPropagation();
+        });
+
         $("#nextbutton").click(function(e){
           console.log("nextbutton");
           if (circle == 1){
-            $(".inner-circle").removeClass("inner-color");
-            $(".outer-circle").addClass("outer-color");
-            $("#cards").empty();
-            $("#OpenImgUpload").css("background-image", "");
-            $("#uploadtext").css("visibility", "visible");
-            $("#circle-panel-header").text("Members of My Outer Circle");
-            $("#add-member-btn").text("Add Someone to My Outer Circle");
-            $("#circle-explanation").text("By default, my outer circle has permissions to see my diet, exercise, appointments, and transport.");
-            circle++;
+            selectOuterCircle();
           } else if (circle == 2){
-            $(".outer-circle").removeClass("outer-color");
-            $(".extended-circle").addClass("extended-color");
-            $("#cards").empty();
-            $("#OpenImgUpload").css("background-image", "");
-            $("#uploadtext").css("visibility", "visible");
-            $("#circle-panel-header").text("Members of My Extended Circle");
-            $("#add-member-btn").text("Add Someone to My Extended Circle");
-            $("#circle-explanation").text("By default, my extended circle has permissions to see my appointments, and transport.");
-            $("#nextbutton").text("Go to Summary");
-            circle++
+            selectExtendedCircle();
           } else if (circle == 3){
             window.location.href = 'summary';
           }
           e.preventDefault();
         });
+
         $("#uploadtext").click(function(e) {
           e.preventDefault();
         })
+
         $("#OpenImgUpload").click(function(e) {
           // $("#profile_photo").trigger('click');
           if (circle === 1 ) {
