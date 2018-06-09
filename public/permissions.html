@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta id="myViewport" name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Circle Permissions and Settings | Care Circles</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/assets/css/permissions.css">
@@ -226,6 +226,14 @@
     </div>
 
   </body>
+  <script>
+    window.onload = function () {
+      let mvp = document.getElementById('myViewport');
+      if (window.innerWidth < 450) {
+        mvp.setAttribute('content','width=450');
+      }
+    }
+  </script>
   <script src="assets/js/jquery-2.1.4.min.js"></script>
   <script src="assets/js/bootstrap.min.js"></script>
   <script src="assets/js/ripple.js"></script>
