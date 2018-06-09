@@ -5,7 +5,7 @@
     <title>Edna's Summary Page | Care Circles</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta id="myViewport" name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
@@ -77,6 +77,14 @@
     </div>
   </body>
   <footer>
+    <script>
+      window.onload = function () {
+        let mvp = document.getElementById('myViewport');
+        if (window.innerWidth < 450) {
+          mvp.setAttribute('content','width=450');
+        }
+      }
+    </script>
     <script src="assets/js/jquery-2.1.4.min.js"></script>
   	<script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/ripple.js"></script>
