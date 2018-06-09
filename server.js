@@ -1,8 +1,8 @@
 var express = require("express");
 var path = require("path");
 var bodyParser = require("body-parser");
-//var mongodb = require("mongodb");
-//var ObjectID = mongodb.ObjectID;
+var mongodb = require("mongodb");
+var ObjectID = mongodb.ObjectID;
 //var basicAuth = require('basic-auth');
 //var authCreds = require("./auth-creds.js");
 
@@ -16,10 +16,10 @@ app.use(express.static(__dirname + "/public", {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }))
 
-var server = app.listen(process.env.PORT || 80, function () {
-  var port = server.address().port;
-  console.log("App now running on port", port);
-});
+// var server = app.listen(process.env.PORT || 80, function () {
+//   var port = server.address().port;
+//   console.log("App now running on port", port);
+// });
 
 // app.get("/circles", function(req,res) {
 //   res.sendFile(__dirname + "/public/circles.html");
@@ -52,32 +52,37 @@ var server = app.listen(process.env.PORT || 80, function () {
 //   };
 // };
 
-// var DRUGS_COLLECTION = "drugs";
+var PATIENTS_COLLECTION = "patients";
 
 
 // app.use(cookieParser());
 // app.use(session({secret: authCreds.secret}))
 
-// // Create a database variable outside of the database connection callback to reuse the connection pool in your app.
-// var database;
-//
-// // Connect to the database before starting the application server.
-// var MongoClient = require('mongodb').MongoClient
-//     , format = require('util').format;
-// MongoClient.connect('mongodb://127.0.0.1:27017/db', function (err, db) {
-//     if (err) {
-//         throw err;
-//     } else {
-//         console.log("successfully connected to the database");
-//     }
-//
-//     database = db
-//
-//     var server = app.listen(process.env.PORT || 80, function () {
-//     var port = server.address().port;
-//     console.log("App now running on port", port);
-//   });
-// });
+// Create a database variable outside of the database connection callback to reuse the connection pool in your app.
+var database;
+
+// Connect to the database before starting the application server.
+var MongoClient = require('mongodb').MongoClient
+    , format = require('util').format;
+MongoClient.connect('mongodb://heroku_30ntgntk:bvtfa7pk1lniibvcvvb32jjme@ds153980.mlab.com:53980/heroku_30ntgntk', function (err, db) {
+    if (err) {
+        throw err;
+    } else {
+        console.log("successfully connected to the database");
+    }
+
+    database = db
+
+    var server = app.listen(process.env.PORT || 80, function () {
+    var port = server.address().port;
+    console.log("App now running on port", port);
+
+    db.collection("test").find({"test1":"testa"}).toArray(function(err,docs){
+      console.log(docs);
+    });
+  });
+});
+
 //
 // // API Routes Below
 //
@@ -204,18 +209,40 @@ app.get("/test", function(req,res) {
 });
 
 app.get("/patients", function(req,res) {
+  var found = false;
   patients.forEach(patient => {
-    if (patient.phn == req.query.phn){
+    if (!found && patient.phn == req.query.phn){
       res.status(200).json(patient);
+      found = true;
     }
   });
-  res.status(400).send("Patient not found with this PHN");
+  if (!found){
+    res.status(400).send("Patient not found with this PHN");
+  }
 });
 
 
-app.post("/patients", function(req,res){
+// app.post("/patients", function(req,res){
+//   console.log(req.body);
+//   res.status(200).send();
+// });
+
+/*  "/patients"
+ *    POST: save new patient
+ */
+app.post("/patients", function(req, res) {
+  var newPatient = req.body;
   console.log(req.body);
-  res.status(200).send();
+  newPatient.createDate = new Date();
+  newPatient.updateDate = new Date();
+
+  database.collection(PATIENTS_COLLECTION).insertOne(newPatient, function(err, doc) {
+    if (err) {
+      handleError(res, err.message, "Failed to create new patient.");
+    } else {
+      res.status(201).json(doc.ops[0]);
+    }
+  });
 });
 
 app.post("/circlemembers/inner", function(req,res) {
