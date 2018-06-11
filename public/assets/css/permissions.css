@@ -82,7 +82,7 @@ table#permissions-table {
   border-radius: 0;
 }
 
-#permissions-table tbody > tr:hover:not(:first-child), #permissions-table tbody > tr:active:not(:first-child) {
+#permissions-table tbody > tr:hover:not(:first-child) {
   background-color: #fafafa;
 }
 
@@ -109,6 +109,10 @@ nav.navbar {
   background-color: transparent;
   border: 2px solid #d8d8d8;
   border-radius: 10px;
+}
+
+.permission-checkbox:hover {
+  background-color: #ffffff;
 }
 
 .permission-checkbox.checked.inner {
