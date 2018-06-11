@@ -111,7 +111,10 @@ nav.navbar {
   border-radius: 10px;
 }
 
-.permission-checkbox:hover {
+.permission-checkbox:hover,
+.permission-checkbox.checked.inner:hover,
+.permission-checkbox.checked.outer:hover,
+.permission-checkbox.checked.extended:hover {
   background-color: #ffffff;
 }
 
