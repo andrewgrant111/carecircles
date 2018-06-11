@@ -76,50 +76,18 @@ th.special {
   text-align: center;
 }
 
-button.btn {
-  margin: 0 10%;
-  background-color: #4697be;
-  height: 100px;
-  font-family: Helvetica;
-  font-size: 24px;
-  font-weight: 500;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: 1px;
-  text-align: center;
-  color: #ffffff;
-  border: none;
-  margin: 0px 0px 50px 0;
-  border-radius: 0 !important;
-}
-
-table.table {
+table#permissions-table {
   margin: 50px 0;
-  border: 1px solid darkgrey;
+  border: 2px solid #d8d8d8;
+  border-radius: 0;
 }
 
-h2 {
-  font-family: Helvetica;
-  font-size: 36px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: 2.2px;
-  text-align: center;
-  color: #000000;
-  /*-webkit-text-stroke: 1px #979797;*/
+#permissions-table tbody > tr:hover:not(:first-child), #permissions-table tbody > tr:active:not(:first-child) {
+  background-color: #fafafa;
 }
 
 .explanation {
-  font-family: Helvetica;
   font-size: 24px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: 1.5px;
   text-align: center;
   color: #4a4a4a;
 }
@@ -138,7 +106,8 @@ nav.navbar {
   outline: none;
   padding: 0;
   display: inline-block;
-  border: 2px solid darkgrey;
+  background-color: transparent;
+  border: 2px solid #d8d8d8;
   border-radius: 10px;
 }
 
