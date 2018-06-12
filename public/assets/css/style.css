@@ -1208,6 +1208,69 @@ button.navbar-toggle.collapsed::before {
 =========================*/
 
 /*------------------------
+	Dashboard Page
+--------------------------*/
+.dashboard-header {
+	display: flex;
+}
+
+.dashboard-patient-photo {
+	width: 150px;
+}
+
+.dashboard-patient-photo > .patient-photo {
+	width: 150px;
+	height: 150px;
+	background-image: url('/assets/img/edna.png');
+	background-size: cover;
+	border-radius: 50%;
+}
+
+.dashboard-header-spacer {
+	 width: 50px;
+}
+
+.dashboard-header-content {
+	width: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.dashboard-header-content h1 {
+	text-align: left;
+	margin-bottom: 0.5em;
+}
+
+.dashboard-tab-menu {
+	display: flex;
+	justify-content: space-around;
+	align-items: flex-start;
+}
+
+.dashboard-tab-element {
+	color: #777777;
+	padding: 1em;
+	background-color: #ffffff;
+	text-align: center;
+	flex-grow: 1;
+}
+
+a.dashboard-tab-element:hover, a.dashboard-tab-element:active {
+	background-color: #fafafa;
+	color: #333333;
+}
+
+.dashboard-tab-element.active {
+	border: 0;
+	border-bottom: 10px solid;
+	border-image: linear-gradient(to right, #f58a41 33%, #0797c1 33%, #0797c1 66%, #10475d 66%) 1;
+	font-weight: bold;
+	color: #333333;
+}
+
+
+
+/*------------------------
 	Page Top Section
 --------------------------*/
 .page-top-section {
