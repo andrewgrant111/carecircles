@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta id="myViewport" name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Nurse Jones's Dashboard | Care Circles</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="/assets/css/permissions.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.png?v=4">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+  <body>
+    <header>
+      <!-- Navigation -->
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mobilemenu">
+              <span class="sr-only">Toggle navigation</span>
+            </button>
+            <a class="navbar-brand" href="/"><img alt="logo" src="assets/img/logo2-navbar.png"></a>
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="enroll">Enroll New Patient</a></li>
+              <li><a href="dashboard">Circles</a></li>
+              <li>
+                <a href="" style="background-color: darkgrey; border-radius: 50%; width: 50px; height: 50px; padding: 0; display: flex; justify-content: center; align-items: center;">
+                  <i class="fa fa-user-md fa-lg" style="color: #ffffff"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div id="mobilemenu">
+            <ul class="nav navbar-nav">
+              <li><a href="enroll">Enroll New Patient</a></li>
+              <li><a href="dashboard">Circles</a></li>
+              <li><a href="">Nurse Jones's Home</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="container pt100">
+      <div class="alert alert-success alert-dismissable fade in">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        Hello, Nurse Jones. Help Edna Gartner set up her circles.
+      </div>
+      <div class="dashboard-header" style="display: flex;">
+        <div id="dashboard-patient-photo" style="width: 150px;">
+          <div style="width: 150px; height: 150px; background-image: url('/assets/img/edna.png'); background-size: cover; border-radius: 50%;">
+            &nbsp;
+          </div>
+        </div>
+        <div class="dashboard-header-spacer" style="width: 50px;">
+          &nbsp;
+        </div>
+        <div class="dashboard-header-summary" style="width: 100%; display: flex; align-items: center;">
+          <div>
+            <h1 style="text-align: left; margin-bottom: 0.5em;">Edna Gartner</h1>
+            <h2>3 CareCircle Members</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-4" style="padding: 1em 2em; text-align: center; border-bottom: 10px solid #888;">
+          <a href=""><strong>Edna's Circles</strong></a>
+        </div>
+        <div class="col-xs-4" style="padding: 1em 2em; text-align: center;">
+          <a href="">Updates Feed</a>
+        </div>
+        <div class="col-xs-4" style="padding: 1em 2em; text-align: center;">
+          <a href="">Permissions</a>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid" style="background-color: #fafafa; border-top: 1px solid #d8d8d8;">
+      <div class="container mt50 mb100">
+        <h1>Setup Edna's Circles</h1>
+        <div style="display: flex;" class="mt20 mb20">
+          <a href="" class="site-btn2">Back</a>
+          <div style="flex-grow: 1; display: flex; justify-content: center; align-items: center;"><h2>Add members to Inner Circle</h2></div>
+          <a href="" class="site-btn">Next</a>
+        </div>
+        <div style="width: 100%; height: 300px; background-color:#ffffff;" class="mt20 mb20">
+          &nbsp;
+        </div>
+        <div class="mt20 mb20" style="display: flex;">
+          <div style="padding: 20px; width: 100%; height: 900px; background-color: #ffffff;" class="mr20">
+            <h2>Inner Circle Members</h2>
+          </div>
+          <div style="padding: 20px; width: 100%; height: 900px; background-color: #ffffff;" class="mr20">
+            <h2>Outer Circle Members</h2>
+          </div>
+          <div style="padding: 20px; width: 100%; height: 900px; background-color: #ffffff;">
+            <h2>Extended Circle Members</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+  // make minimum viewport 768px of smaller devices
+    window.onload = function () {
+      let mvp = document.getElementById('myViewport');
+      if (window.innerWidth < 768) {
+        mvp.setAttribute('content','width=768');
+      }
+    }
+  </script>
+  <script src="assets/js/jquery-2.1.4.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/ripple.js"></script>
+</html>
