@@ -401,6 +401,18 @@ button.navbar-toggle.collapsed::before {
   width: 100%;
 }
 
+.site-btn.inner {
+	background-color: #f58a41;
+}
+
+.site-btn.outer {
+	background-color: #0797c1;
+}
+
+.site-btn.extended {
+	background-color: #10475d;
+}
+
 /*------------------
 	Content
 --------------------*/
@@ -1266,6 +1278,16 @@ a.dashboard-tab-element:hover, a.dashboard-tab-element:active {
 	border-image: linear-gradient(to right, #f58a41 33%, #0797c1 33%, #0797c1 66%, #10475d 66%) 1;
 	font-weight: bold;
 	color: #333333;
+}
+
+.dashboard-container-fluid {
+	background-color: #fafafa;
+	border-top: 1px solid #d8d8d8;
+}
+
+.dashboard-circles-flexbox {
+	display: flex;
+	overflow-x: scroll;
 }
 
 
