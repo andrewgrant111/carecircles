@@ -91,13 +91,13 @@
           &nbsp;
         </div>
         <div class="mt20 mb20" style="display: flex;">
-          <div style="padding: 20px; width: 100%; height: 900px; background-color: #ffffff;" class="mr20">
+          <div style="padding: 20px; width: 100%; height: 900px; background-color: #ffffff;" class="mr20" id="inner-members">
             <h2>Inner Circle Members</h2>
           </div>
-          <div style="padding: 20px; width: 100%; height: 900px; background-color: #ffffff;" class="mr20">
+          <div style="padding: 20px; width: 100%; height: 900px; background-color: #ffffff;" class="mr20" id="outer-members">
             <h2>Outer Circle Members</h2>
           </div>
-          <div style="padding: 20px; width: 100%; height: 900px; background-color: #ffffff;">
+          <div style="padding: 20px; width: 100%; height: 900px; background-color: #ffffff;" id="extended-members">
             <h2>Extended Circle Members</h2>
           </div>
         </div>
@@ -116,4 +116,73 @@
   <script src="assets/js/jquery-2.1.4.min.js"></script>
   <script src="assets/js/bootstrap.min.js"></script>
   <script src="assets/js/ripple.js"></script>
+  <script>
+    var cards = 0;
+    $(document).ready(function(){
+      $.get("/circlemembers", function(data) {
+        data["inner"].forEach(innerMember => {
+          cards++;
+          var card = '<div class="card" id="card'+cards+'"> \
+              <div class="card-img"><img src="assets/img/susie.png" alt="user" class="img-circle"></div> \
+                <div class="card-content"> \
+                  <div class="card-name1"></div> \
+                  <div class="card-relationship">My </div> \
+                  <hr> \
+                  <p class="card-phone">Phone: </p> \
+                  <p class="card-email">Email: </p> \
+                </div> \
+              </div> \
+              <div class="card-spacer"> \
+                &nbsp; \
+              </div>';
+
+          $("#inner-members").append(card);
+          console.log($("#card"+cards))
+          $("#card"+cards+" .card-name1").append(innerMember.name);
+          $("#card"+cards+" .card-email").append(innerMember.email);
+          $("#card"+cards+" .card-phone").append(innerMember.phone);
+          $("#card"+cards+" .card-relationship").append(innerMember.relationship);
+        });
+        data["outer"].forEach(outerMember => {
+          cards++;
+          var card = '<div class="card" id="card'+cards+'"> \
+              <div class="card-img"><img src="assets/img/george.png" alt="user" class="img-circle"></div> \
+                <div class="card-content"> \
+                  <div class="card-name2"></div> \
+                  <div class="card-relationship">My </div> \
+                  <hr> \
+                  <p class="card-phone">Phone: </p> \
+                  <p class="card-email">Email: </p> \
+                </div> \
+              </div>';
+
+          $("#outer-members").append(card);
+          $("#card"+cards+" .card-name2").append(outerMember.name);
+          $("#card"+cards+" .card-email").append(outerMember.email);
+          $("#card"+cards+" .card-phone").append(outerMember.phone);
+          $("#card"+cards+" .card-relationship").append(outerMember.relationship);
+        });
+        data["extended"].forEach(extendedMember => {
+          cards++;
+          var card = '<div class="card" id="card'+cards+'"> \
+              <div class="card-img"><img src="assets/img/barry.png" alt="user" class="img-circle"></div> \
+                <div class="card-content"> \
+                  <div class="card-name3"></div> \
+                  <div class="card-relationship">My </div> \
+                  <hr> \
+                  <p class="card-phone">Phone: </p> \
+                  <p class="card-email">Email: </p> \
+                </div> \
+              </div>';
+
+          $("#extended-members").append(card);
+          $("#card"+cards+" .card-name3").append(extendedMember.name);
+          $("#card"+cards+" .card-email").append(extendedMember.email);
+          $("#card"+cards+" .card-phone").append(extendedMember.phone);
+          $("#card"+cards+" .card-relationship").append(extendedMember.relationship);
+        });
+        //alert("Load was performed.");
+      });
+    });
+  </script>
 </html>
