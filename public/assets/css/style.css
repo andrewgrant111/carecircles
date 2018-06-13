@@ -1285,9 +1285,127 @@ a.dashboard-tab-element:hover, a.dashboard-tab-element:active {
 	border-top: 1px solid #d8d8d8;
 }
 
+.dashboard-circles-header {
+	width: 100%;
+	background-color:#ffffff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.dashboard-circles-header-diagram {
+	width: 300px;
+	height: 300px;
+	padding: 20px;
+	/* background-color: #ff9999; */
+}
+
+.dashboard-circles-header-diagram .circles-diagram {
+	width: 100%;
+	height: 100%;
+	background-color: #cccccc;
+	border-radius: 50%;
+	position: relative;
+}
+
+.dashboard-circles-header-diagram .outer-circle {
+	width: 66%;
+	height: 66%;
+	background-color: #dddddd;
+	border-radius: 50%;
+	position: absolute;
+	top: 18%;
+	left: 18%;
+}
+
+.dashboard-circles-header-diagram .inner-circle {
+	width: 34%;
+	height: 34%;
+	background-color: #f58a41;
+	border-radius: 50%;
+	position: absolute;
+	top: 33%;
+	left: 33%;
+}
+
+.dashboard-circles-header-permissions {
+	flex-grow: 1;
+	min-width: 420px;
+	padding: 20px;
+	/* background-color: #9999ff; */
+}
+
+.dashboard-permissions-icons-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.dashboard-permissions-icons {
+	background-color: #cccccc;
+	width: 50px;
+	height: 50px;
+	margin: 10px;
+}
+
+.dashboard-permissions-icons.inner {
+	background-color: #f58a41;
+}
+
+.dashboard-permissions-icons.outer {
+	background-color: #0797c1;
+}
+
+.dashboard-permissions-icons.extended {
+	background-color: #10475d;
+}
+
+.dashboard-permissions-icons.medication {
+	-webkit-mask-image: url('/assets/img/medication.png');
+	mask-image: url('/assets/img/medication.png');
+	-webkit-mask-size: cover;
+}
+
+.dashboard-permissions-icons.diagnosis {
+	-webkit-mask-image: url('/assets/img/diagnosis.png');
+	mask-image: url('/assets/img/diagnosis.png');
+	-webkit-mask-size: cover;
+}
+
+.dashboard-permissions-icons.symptoms {
+	-webkit-mask-image: url('/assets/img/symptoms.png');
+	mask-image: url('/assets/img/symptoms.png');
+	-webkit-mask-size: cover;
+}
+
+.dashboard-permissions-icons.diet {
+	-webkit-mask-image: url('/assets/img/diet.png');
+	mask-image: url('/assets/img/diet.png');
+	-webkit-mask-size: cover;
+}
+
+.dashboard-permissions-icons.exercise {
+	-webkit-mask-image: url('/assets/img/exercise.png');
+	mask-image: url('/assets/img/exercise.png');
+	-webkit-mask-size: cover;
+}
+
+.dashboard-permissions-icons.appointment {
+	-webkit-mask-image: url('/assets/img/appointment.png');
+	mask-image: url('/assets/img/appointment.png');
+	-webkit-mask-size: cover;
+}
+
+.dashboard-permissions-icons.transport {
+	-webkit-mask-image: url('/assets/img/transport.png');
+	mask-image: url('/assets/img/transport.png');
+	-webkit-mask-size: cover;
+}
+
 .dashboard-circles-flexbox {
 	display: flex;
 	overflow-x: scroll;
+	overflow-y: hidden;
 }
 
 

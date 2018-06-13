@@ -6,7 +6,6 @@
     <title>Nurse Jones's Dashboard | Care Circles</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="assets/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="/assets/css/permissions.css">
     <link rel="stylesheet" href="/assets/css/style.css">
 
     <!-- Favicon -->
@@ -79,12 +78,32 @@
           <a href="" class="site-btn2">Back</a>
           <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center; align-items: center;">
             <h1 style="margin-bottom: 1em;">Set Up Edna's Circles</h1>
-            <h2 style="margin-bottom: 1em;">Add members to inner circle</h2>
+            <h2 style="margin-bottom: 1em;">Add members to Inner Circle</h2>
           </div>
           <a href="" class="site-btn">Next Circle</a>
         </div>
-        <div style="width: 100%; height: 300px; background-color:#ffffff;" class="mt20 mb20">
-          &nbsp;
+        <div class="mt20 mb20 dashboard-circles-header">
+          <div class="dashboard-circles-header-diagram">
+            <div class="circles-diagram">
+              <div class="outer-circle">
+                <div class="inner-circle">
+                  &nbsp;
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="dashboard-circles-header-permissions">
+            Inner Circle can view:
+            <div class="dashboard-permissions-icons-wrapper">
+              <div class="dashboard-permissions-icons medication inner"></div>
+              <div class="dashboard-permissions-icons diagnosis inner"></div>
+              <div class="dashboard-permissions-icons symptoms inner"></div>
+              <div class="dashboard-permissions-icons diet inner"></div>
+              <div class="dashboard-permissions-icons exercise inner"></div>
+              <div class="dashboard-permissions-icons appointment inner"></div>
+              <div class="dashboard-permissions-icons transport inner"></div>
+            </div>
+          </div>
         </div>
         <div class="dashboard-circles-flexbox mt20 mb20">
           <div style="padding: 20px; width: 100%; height: 900px; background-color: #ffffff;" class="mr20" id="inner-members">
