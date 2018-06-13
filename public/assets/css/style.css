@@ -1198,7 +1198,7 @@ button.navbar-toggle.collapsed::before {
 	color: #ffffff;
 	font-size: 16px;
 	letter-spacing: 1px;
-	line-height: 1.75em;
+	line-height: 2em;
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
@@ -1212,7 +1212,7 @@ button.navbar-toggle.collapsed::before {
 	color: #ffffff;
 	font-size: 18px;
 	letter-spacing: 1px;
-	line-height: 1.75em;
+	line-height: 2em;
 }
 
 .footer-group {
