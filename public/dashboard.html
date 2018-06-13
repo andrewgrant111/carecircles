@@ -78,7 +78,7 @@
           <a href="" class="site-btn2">Back</a>
           <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center; align-items: center;">
             <h1 style="margin-bottom: 1em;">Set Up Edna's Circles</h1>
-            <h2 style="margin-bottom: 1em;">Add members to Inner Circle</h2>
+            <h2 style="margin-bottom: 1em;" class="inner-text-color">Add members to Inner Circle</h2>
           </div>
           <a href="" class="site-btn">Next Circle</a>
         </div>
@@ -86,7 +86,7 @@
           <div class="dashboard-circles-header-diagram">
             <div class="circles-diagram">
               <div class="outer-circle">
-                <div class="inner-circle">
+                <div class="inner-circle inner-bg-color">
                   &nbsp;
                 </div>
               </div>
@@ -106,15 +106,15 @@
           </div>
         </div>
         <div class="dashboard-circles-flexbox mt20 mb20">
-          <div style="padding: 20px; width: 100%; height: 900px; background-color: #ffffff;" class="mr20" id="inner-members">
+          <div class="mr20 dashboard-circles-column" id="inner-members">
             <h2 style="margin-bottom: 20px;">Inner Circle Members</h2>
             <a href="" class="site-btn fullwidth inner">Add New</a>
           </div>
-          <div style="padding: 20px; width: 100%; height: 900px; background-color: #ffffff;" class="mr20" id="outer-members">
+          <div class="mr20 dashboard-circles-column disabled" id="outer-members">
             <h2 style="margin-bottom: 20px;">Outer Circle Members</h2>
             <a href="" class="site-btn fullwidth outer">Add New</a>
           </div>
-          <div style="padding: 20px; width: 100%; height: 900px; background-color: #ffffff;" id="extended-members">
+          <div class="dashboard-circles-column disabled" id="extended-members">
             <h2 style="margin-bottom: 20px;">Extended Circle Members</h2>
             <a href="" class="site-btn fullwidth extended">Add New</a>
           </div>
@@ -126,8 +126,8 @@
   // make minimum viewport 768px of smaller devices
     window.onload = function () {
       let mvp = document.getElementById('myViewport');
-      if (window.innerWidth < 768) {
-        mvp.setAttribute('content','width=768');
+      if (window.innerWidth < 450 ) {
+        mvp.setAttribute('content','width=450');
       }
     }
   </script>
