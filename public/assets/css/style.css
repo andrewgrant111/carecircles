@@ -1040,31 +1040,49 @@ button.navbar-toggle.collapsed::before {
 /*------------------------
 	Team section
 --------------------------*/
-.team-section .container {
-	position: relative;
-	z-index: 5;
+.team-flexbox {
+	display: flex;
+	flex-wrap: wrap;
 }
 
 .member {
+	margin: 20px;
+	padding: 40px 20px;
 	text-align: center;
+	background-color: #fafafa;
+	min-width: 250px;
+	flex-grow: 1;
+	line-height: 2em;
+}
+
+.member.spacer {
+	background-color: transparent;
 }
 
 .member img {
-	margin-bottom: 60px;
+	margin-bottom: 40px;
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
 }
 
 .member h2 {
 	font-size: 24px;
 	font-weight: 400;
 	margin-bottom: 20px;
-	color: #fff;
+	color: #10475d;
 }
 
 .member h3 {
 	font-size: 14px;
-	color: #2be6ab;
+	color: #f58a41;
 	font-weight: 400;
 	text-transform: uppercase;
+}
+
+.member .contact {
+	margin-top: 40px;
+	font-size: 14px;
 }
 
 
