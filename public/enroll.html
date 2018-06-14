@@ -151,103 +151,116 @@
       <div class="bottom-padding" style="height:60px">&nbsp;</div>
     </div>
     <footer>
+
+
       <script src="assets/js/jquery-2.1.4.min.js"></script>
     	<script src="assets/js/bootstrap.min.js"></script>
       <script src="assets/js/ripple.js"></script>
+      <script src="assets/js/jquery.cookie.js"></script>
       <script>
-
-      $(document).ready(function() {
-
-        $("#searchbutton").click(function(e) {
-          e.preventDefault();
-          const grabPatient = document.querySelector('#phn').value;
-          $.ajax({
-            type: "GET",
-            url: `patients?phn=${grabPatient}`,
-            data: {
-              id: grabPatient,
-              // access_token: $("#access_token").val()
-            },
-            success: function(response) {
-              console.log(response);
-              const patientObject = response;
-              // document.querySelector('#full_name').value = patientObject.name;
-              // document.querySelector('#address').value = patientObject.address;
-              // document.querySelector('#dob').value = patientObject.dob;
-              document.querySelector('#phone').value = patientObject.phoneNumber;
-              // if (patientObject.sex == 'Male'){
-              //   document.querySelector('#sexChoice1').checked = true;
-              // } else if (patientObject.sex == 'Female') {
-              //   document.querySelector('#sexChoice2').checked = true;
-              // } else if (patientObject.sex == 'Nonbinary') {
-              //   document.querySelector('#sexChoice3').checked = true;
-              // }
-              const options = { year: 'numeric', month: 'long', day: 'numeric' };
-              const patientDOB  = new Date(patientObject.dob);
-              document.querySelector('.confirmPatient').innerHTML = `
-              Are these details correct? If not, <a href="#"><strong>report an error</strong></a>.
-              <div class="confirmPatientDetails">
-                <p>
-                  <h5>Full Name</h5>
-                  ${patientObject.name}
-                </p>
-                <p>
-                  <h5>Date of Birth</h5>
-                  ${patientDOB.toLocaleDateString("en-US", options)}
-                </p>
-                <p>
-                  <h5>Sex</h5>
-                  ${patientObject.sex}
-                </p>
-                <p>
-                  <h5>Mailing Address</h5>
-                  ${patientObject.address}
-                </p>
-              </div>
-              `
-            },
-            error: function(response) {
-              alert('Error: Patient not found');
-            }
-          });
-        });
-
+        var patient = {};
         $(document).ready(function() {
-          $("#agreebutton").click(function(e) {
+
+          $("#searchbutton").click(function(e) {
             e.preventDefault();
-            const grabPatient = document.querySelector('#phn').value;
+            var grabPatient = $('#phn').val();
             $.ajax({
-              type: "POST",
-              url: `patients`,
+              type: "GET",
+              url: `patients?phn=${grabPatient}`,
               data: {
-                phone: $('#phone').val(),
-                email: $('#email').val(),
-                // sex: $('input[name=sex]:checked').val()
+                id: grabPatient,
+                // access_token: $("#access_token").val()
               },
               success: function(response) {
-                window.location.href = "circles";
+                patient = response;
+                console.log(response);
+                const patientObject = response;
+                // document.querySelector('#full_name').value = patientObject.name;
+                // document.querySelector('#address').value = patientObject.address;
+                // document.querySelector('#dob').value = patientObject.dob;
+                $('#phone').val(patientObject.phoneNumber);
+                // if (patientObject.sex == 'Male'){
+                //   document.querySelector('#sexChoice1').checked = true;
+                // } else if (patientObject.sex == 'Female') {
+                //   document.querySelector('#sexChoice2').checked = true;
+                // } else if (patientObject.sex == 'Nonbinary') {
+                //   document.querySelector('#sexChoice3').checked = true;
+                // }
+                const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                const patientDOB  = new Date(patientObject.dob);
+                document.querySelector('.confirmPatient').innerHTML = `
+                  Are these details correct? If not, <a href="#"><strong>report an error</strong></a>.
+                  <div class="confirmPatientDetails">
+                    <p>
+                      <h5>Full Name</h5>
+                      ${patientObject.name}
+                    </p>
+                    <p>
+                      <h5>Date of Birth</h5>
+                      ${patientDOB.toLocaleDateString("en-US", options)}
+                    </p>
+                    <p>
+                      <h5>Sex</h5>
+                      ${patientObject.sex}
+                    </p>
+                    <p>
+                      <h5>Mailing Address</h5>
+                      ${patientObject.address}
+                    </p>
+                  </div>
+                `
               },
               error: function(response) {
-                alert('error');
+                alert('Error: Patient not found');
               }
             });
           });
-          $("#uploadtext").click(function(e) {
-            e.preventDefault();
-          })
-          let uploadClick = false;
-          $("#OpenImgUpload").click(function(e) {
-            // $("#profile_photo").trigger('click');
-            setTimeout( () => {$("#OpenImgUpload").css("background-image", "url(/assets/img/edna.png)")}, 500);
-            $("#uploadtext").css("visibility", "hidden");
-            if (!uploadClick) {
-              setTimeout( () => {$("#profile_photo_row").append(`<div style="color: green;">Great pic!</div>`)}, 1000);
-              uploadClick = true;
-            }
-          });
-        });
 
-      });
+          $(document).ready(function() {
+            $("#agreebutton").click(function(e) {
+              e.preventDefault();
+              console.log()
+              patient.phone = $('#phone').val();
+              patient.email = $('#email').val();
+              const grabPatient = document.querySelector('#phn').value;
+              $.ajax({
+                type: "POST",
+                url: `patients`,
+                data: patient,
+                success: function(response) {
+                  $.cookie("patientContext", JSON.stringify(response), { expires: 7, path: '/' });
+                  console.log(response);
+                  var patient = JSON.parse($.cookie("patientContext"));
+                  if (patient == null) {
+                    console.log("test null");
+                  } else {
+                    console.log(JSON.stringify(patient));
+                    console.log(patient.phn);
+                    console.log(patient.email);
+                  }
+                  window.location.href = "circles";
+                },
+                error: function(response) {
+                  alert('error');
+                }
+              });
+            });
+            $("#uploadtext").click(function(e) {
+              e.preventDefault();
+            })
+            let uploadClick = false;
+            $("#OpenImgUpload").click(function(e) {
+              // $("#profile_photo").trigger('click');
+              setTimeout( () => {$("#OpenImgUpload").css("background-image", "url(/assets/img/edna.png)")}, 500);
+              $("#uploadtext").css("visibility", "hidden");
+              if (!uploadClick) {
+                setTimeout( () => {$("#profile_photo_row").append(`<div style="color: green;">Great pic!</div>`)}, 1000);
+                uploadClick = true;
+              }
+            });
+          });
+
+        });
       </script>
     </footer>
   </body>

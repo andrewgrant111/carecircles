@@ -13,6 +13,7 @@
   margin: auto;
   position: relative;
   border: 4px solid #979797;
+  cursor: pointer;
 }
 
 .circle-image {
@@ -21,6 +22,7 @@
   left: -62px;
   top: 197px;
   border-radius: 50%;
+  cursor: default;
 }
 
 .circle-image-topfix {

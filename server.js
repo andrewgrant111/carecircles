@@ -83,14 +83,14 @@ MongoClient.connect('mongodb://heroku_30ntgntk:bvtfa7pk1lniibvcvvb32jjme@ds15398
   });
 });
 
-//
-// // API Routes Below
-//
-// // Generic error handler used by all endpoints.
-// function handleError(res, reason, message, code) {
-//   console.log("ERROR: " + reason);
-//   res.status(code || 500).json({"error": message});
-// }
+// API Routes Below
+
+// Generic error handler used by all endpoints.
+function handleError(res, reason, message, code) {
+  console.log("ERROR: " + reason);
+  res.status(code || 500).json({"error": message});
+}
+
 //
 //
 // /*  "/drugs"
@@ -202,12 +202,6 @@ app.post("/enroll", function(req,res) {
   enrolledPatients.push(req.body);
 });
 
-var test = {"test1":"test2"};
-
-app.get("/test", function(req,res) {
-  res.status(200).json(test);
-});
-
 app.get("/patients", function(req,res) {
   var found = false;
   patients.forEach(patient => {
@@ -275,6 +269,17 @@ app.post("/update", function(req,res) {
 });
 
 app.post("/permissions", function(req,res) {
+  console.log(req.body);
+  res.status(200).send();
+});
+
+app.post("/patients/:phn/permissions", function(req,res) {
+  database.collection(PATIENTS_COLLECTION).update({phn:req.params.phn}, {$set: {permissions:req.body}}, function(err, doc){
+    if (err) {
+      handleError(res, err.message, "Failed to update permissions.");
+    }
+  });
+
   console.log(req.body);
   res.status(200).send();
 });

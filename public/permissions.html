@@ -243,6 +243,14 @@
   <script src="assets/js/ripple.js"></script>
   <script>
     $(document).ready(function(){
+      var patient = JSON.parse($.cookie("patientContext"));
+      if (patient == null) {
+        console.log("no patient context");
+      } else {
+        console.log(JSON.stringify(patient));
+        console.log(patient.phn);
+      }
+
       $("#confirm-permissions-button").click(function(e){
         window.location.href = 'circles';
       });
@@ -254,12 +262,12 @@
 
       $(".permission-checkbox").click(function(e){
         $(this).toggleClass("checked");
-        var checks = getChecks();
+        patient.checks = getChecks();
         console.log(checks);
         $.ajax({
           type: "POST",
           url: 'permissions',
-          data: checks,
+          data: patient,
           success: function(result) {
 
           },
