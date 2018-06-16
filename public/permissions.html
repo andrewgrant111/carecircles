@@ -241,6 +241,7 @@
   <script src="assets/js/jquery-2.1.4.min.js"></script>
   <script src="assets/js/bootstrap.min.js"></script>
   <script src="assets/js/ripple.js"></script>
+  <script src="assets/js/jquery.cookie.js"></script>
   <script>
     $(document).ready(function(){
       var patient = JSON.parse($.cookie("patientContext"));
@@ -263,7 +264,7 @@
       $(".permission-checkbox").click(function(e){
         $(this).toggleClass("checked");
         patient.checks = getChecks();
-        console.log(checks);
+        console.log(patient.checks);
         $.ajax({
           type: "POST",
           url: 'permissions',
