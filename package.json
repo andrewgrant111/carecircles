@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/andrewgrant111/support-circle/issues"
   },
-  "homepage": "https://github.com/andrewgrant111/support-circle#readme"
+  "homepage": "https://github.com/andrewgrant111/support-circle#readme",
+  "engines": {
+    "node": "8.11.3"
+  }
 }
