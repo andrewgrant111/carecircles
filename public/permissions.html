@@ -244,12 +244,17 @@
   <script src="assets/js/jquery.cookie.js"></script>
   <script>
     $(document).ready(function(){
-      var patient = JSON.parse($.cookie("patientContext"));
-      if (patient == null) {
-        console.log("no patient context");
+      if (!!$.cookie('patientContext')) {
+        var patient = JSON.parse($.cookie("patientContext"));
+        if (patient == null) {
+          console.log("no patient context");
+        } else {
+          console.log(JSON.stringify(patient));
+          console.log(patient.phn);
+          console.log(patient.email);
+        }
       } else {
-        console.log(JSON.stringify(patient));
-        console.log(patient.phn);
+        console.log("no patient context");
       }
 
       $("#confirm-permissions-button").click(function(e){
