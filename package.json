@@ -7,7 +7,7 @@
     "body-parser": "^1.15.1",
     "express": "^4.13.4",
     "mongodb": "^2.1.19",
-    "nodemailer": "^2.4.2",
+    "nodemailer": "^4.6.7",
     "twilio": "^3.17.1"
   },
   "devDependencies": {},
