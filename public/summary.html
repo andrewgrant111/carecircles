@@ -87,6 +87,19 @@
     <script>
       var cards = 0;
       $(document).ready(function(){
+        if (!!$.cookie('patientContext')) {
+          var patient = JSON.parse($.cookie("patientContext"));
+          if (patient == null) {
+            console.log("no patient context");
+          } else {
+            console.log(JSON.stringify(patient));
+            console.log(patient.phn);
+            console.log(patient.email);
+          }
+        } else {
+          console.log("no patient context");
+        }
+
         $.get("/circlemembers", function(data) {
           data["inner"].forEach(innerMember => {
             cards++;

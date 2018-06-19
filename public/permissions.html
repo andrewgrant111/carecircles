@@ -241,16 +241,20 @@
   <script src="assets/js/jquery-2.1.4.min.js"></script>
   <script src="assets/js/bootstrap.min.js"></script>
   <script src="assets/js/ripple.js"></script>
+  <script src="assets/js/jquery.cookie.js"></script>
   <script>
     $(document).ready(function(){
-      const patientContext = $.cookie('patientContext');
-      const patient = patientContext ? JSON.parse(patientContext) : null;
-
-      if (patient == null) {
-        console.log("no patient context");
+      if (!!$.cookie('patientContext')) {
+        var patient = JSON.parse($.cookie("patientContext"));
+        if (patient == null) {
+          console.log("no patient context");
+        } else {
+          console.log(JSON.stringify(patient));
+          console.log(patient.phn);
+          console.log(patient.email);
+        }
       } else {
-        console.log(JSON.stringify(patient));
-        console.log(patient.phn);
+        console.log("no patient context");
       }
 
       $("#confirm-permissions-button").click(function(e){
@@ -265,7 +269,7 @@
       $(".permission-checkbox").click(function(e){
         $(this).toggleClass("checked");
         patient.checks = getChecks();
-        console.log(checks);
+        console.log(patient.checks);
         $.ajax({
           type: "POST",
           url: 'permissions',
