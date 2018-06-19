@@ -243,7 +243,9 @@
   <script src="assets/js/ripple.js"></script>
   <script>
     $(document).ready(function(){
-      var patient = JSON.parse($.cookie("patientContext"));
+      const patientContext = $.cookie('patientContext');
+      const patient = patientContext ? JSON.parse(patientContext) : null;
+
       if (patient == null) {
         console.log("no patient context");
       } else {
