@@ -2,6 +2,8 @@ var express = require("express");
 var path = require("path");
 var bodyParser = require("body-parser");
 var mongodb = require("mongodb");
+var request = require("request");
+
 var ObjectID = mongodb.ObjectID;
 //var basicAuth = require('basic-auth');
 //var authCreds = require("./auth-creds.js");
@@ -197,6 +199,23 @@ var circleMembers = {
 // };
 
 var enrolledPatients = [];
+
+app.post("/contactform", function(req,res) {
+  var messageText = '*Name:* ' + req.body.name + '\n' + '*Email:* ' + req.body.email + '\n' + '*Message:* ' + req.body.message
+
+  request.post(process.env.SLACK_CONTACT_FORM_URL,
+    { json: { mrkdwn: true, text: messageText } },
+    function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            //console.log(body)
+        } else if (error) {
+          console.log(error)
+        } else if (!error){
+          console.log(body)
+        }
+    });
+    res.status(200).send();
+});
 
 app.post("/enroll", function(req,res) {
   enrolledPatients.push(req.body);

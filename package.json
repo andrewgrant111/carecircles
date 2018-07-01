@@ -8,6 +8,7 @@
     "express": "^4.13.4",
     "mongodb": "^2.1.19",
     "nodemailer": "^4.6.7",
+    "request": "^2.87.0",
     "twilio": "^3.17.1"
   },
   "devDependencies": {},
