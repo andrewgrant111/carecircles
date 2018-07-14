@@ -44,53 +44,29 @@
 
 
       <script>
-      $(document).ready(function() {
-        $("form").submit(function( event ) {
-          // console.log($(this).serializeArray());
+        $(document).ready(function() {
+          $("form").submit(function( event ) {
+            formArray = $(this).serializeArray();
+            var formObject = {};
+            $.each(formArray,
+              function(i, v) {
+                formObject[v.name] = v.value;
+              });
 
-          formArray = $(this).serializeArray();
-          var formObject = {};
-          $.each(formArray,
-            function(i, v) {
-              formObject[v.name] = v.value;
+            $.ajax({
+              type: "POST",
+              url: 'contactform',
+              data: formObject,
+              success: function(response) {
+                //
+              },
+              error: function(response) {
+                alert('Error');
+              }
             });
-          // console.log(formObject);
-
-          $.ajax({
-            type: "POST",
-            url: 'contactform',
-            data: formObject,
-            success: function(response) {
-              //
-            },
-            error: function(response) {
-              alert('Error');
-            }
+            event.preventDefault();
           });
-
-          event.preventDefault();
         });
-      });
-
-      //   $("#searchbutton").click(function(e) {
-      //     e.preventDefault();
-      //     var grabPatient = $('#phn').val();
-      //     $.ajax({
-      //       type: "GET",
-      //       url: `patients?phn=${grabPatient}`,
-      //       data: {
-      //         id: grabPatient,
-      //         // access_token: $("#access_token").val()
-      //       },
-      //       success: function(response) {
-      //         //
-      //       },
-      //       error: function(response) {
-      //         alert('Error');
-      //       }
-      //     });
-      //   });
-      // });
       </script>
 
     </footer>

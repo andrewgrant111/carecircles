@@ -192,30 +192,7 @@ var circleMembers = {
   }]
 };
 
-// var circleMembers = {
-//   "inner": [],
-//   "outer": [],
-//   "extended": []
-// };
-
 var enrolledPatients = [];
-
-app.post("/contactform", function(req,res) {
-  var messageText = '*Name:* ' + req.body.name + '\n' + '*Email:* ' + req.body.email + '\n' + '*Message:* ' + req.body.message
-
-  request.post(process.env.SLACK_CONTACT_FORM_URL,
-    { json: { mrkdwn: true, text: messageText } },
-    function (error, response, body) {
-        if (!error && response.statusCode == 200) {
-            //console.log(body)
-        } else if (error) {
-          console.log(error)
-        } else if (!error){
-          console.log(body)
-        }
-    });
-    res.status(200).send();
-});
 
 app.post("/enroll", function(req,res) {
   enrolledPatients.push(req.body);
@@ -234,11 +211,6 @@ app.get("/patients", function(req,res) {
   }
 });
 
-
-// app.post("/patients", function(req,res){
-//   console.log(req.body);
-//   res.status(200).send();
-// });
 
 /*  "/patients"
  *    POST: save new patient
@@ -334,18 +306,46 @@ app.post("/patients/:phn/permissions", function(req,res) {
 // });
 
 
-// app.post("/sms", function(req,res){
-//   console.log(req.body.phone);
-//   var accountSid = process.env.TWILIO_SID; // Your Account SID from www.twilio.com/console
-//   var authToken = process.env.TWILIO_TOKEN;   // Your Auth Token from www.twilio.com/console
-//
-//   var twilio = require('twilio');
-//   var client = new twilio(accountSid, authToken);
-//
-//   client.messages.create({
-//       body: 'Hello from Node',
-//       to: req.body.phone,  // Text this number
-//       from: process.env.TWILIO_PHONE // From a valid Twilio number
-//   })
-//   .then((message) => console.log(message.sid));
-// });
+app.post("/sms", function(req,res){
+  console.log(req.body.phone);
+  console.log(req.body.smspassword);
+  console.log(req.body.message)
+
+  var smsPassword = process.env.SMS_PASSWORD; // Our password to secure SMS functionality
+  if (req.body.smspassword != smsPassword){
+    res.status(401).send("SMS Password is incorrect");
+    return;
+  }
+
+  var accountSid = process.env.TWILIO_SID; // Your Account SID from www.twilio.com/console
+  var authToken = process.env.TWILIO_TOKEN;   // Your Auth Token from www.twilio.com/console
+  var twilio = require('twilio');
+  var client = new twilio(accountSid, authToken);
+
+  client.messages.create({
+      body: req.body.message,
+      to: req.body.phone,  // Text this number
+      from: process.env.TWILIO_PHONE // From a valid Twilio number
+  })
+  .then((message) => console.log(message.sid));
+
+  res.status(200).send();
+});
+
+
+app.post("/contactform", function(req,res) {
+  var messageText = '*Name:* ' + req.body.name + '\n' + '*Email:* ' + req.body.email + '\n' + '*Message:* ' + req.body.message
+
+  request.post(process.env.SLACK_CONTACT_FORM_URL,
+    { json: { mrkdwn: true, text: messageText } },
+    function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            //console.log(body)
+        } else if (error) {
+          console.log(error)
+        } else if (!error){
+          console.log(body)
+        }
+    });
+    res.status(200).send();
+});

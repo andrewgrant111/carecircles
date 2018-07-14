@@ -3,26 +3,210 @@
   <head>
     <meta charset="utf-8">
     <title>Circle Permissions and Settings | Care Circles</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="/assets/css/configure.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+      option {
+        color: blue;
+        font-size: 100px;
+      }
+    </style>
   </head>
   <body>
-    <h2>EMR Demo Page</h2>
-    <div class="panel panel-default">
+    <div class="container mt50">
+      <h2>EMR Demo Page</h2>
 
+      <p>Edna Gartner</p>
+      <form>
+        <h4>New Prescription</h4>
+        <div class="form-group">
+          <label for="rx">Rx to take</label>
+          <input type="text" class="form-control" id="rx" name="rx" placeholder="Example: Metformin 500mg">
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-xs-2">
+              <label for="dose">Dose</label>
+              <input type="text" class="form-control" id="dose" name="dose" placeholder="Example: 1">
+            </div>
+            <div class="col-xs-4">
+              <label for="dosetype"></label>
+              <select class="form-control" id="dosetype">
+                <option></option>
+                <option>pills</option>
+                <option>tablets</option>
+              </select>
+            </div>
+            <div class="col-xs-6">
+              <label for="freq">Frequency</label>
+              <select class="form-control" id="freq" name="freq" placeholder="Test">
+                <option></option>
+                <option>as needed</option>
+                <option>1 time per day</option>
+                <option>2 times per day</option>
+                <option>3 times per day</option>
+                <option>4 times per day</option>
+                <option>5 times per day</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-xs-2">
+              <label for="qty">Quantity</label>
+              <input type="text" class="form-control" id="qty" name="qty" placeholder="Example: 1">
+            </div>
+            <div class="col-xs-4">
+              <label for="qtytype"></label>
+              <select class="form-control" id="qtytype">
+                <option></option>
+                <option>pills</option>
+                <option>tablets</option>
+                <option>days</option>
+                <option>weeks</option>
+                <option>months</option>
+              </select>
+            </div>
+            <div class="col-xs-6">
+              <label for="qty">Other Instructions</label>
+              <input type="text" class="form-control" id="instructions" name="instructions" placeholder="Example: No eating for 3 hours before">
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <button id="update-meds-btn" type="button" class="btn btn-primary form-control">Update Meds</button><br />
+        </div>
+      </form>
 
-    <p>Test Patient</p>
-    <div class="button-div">
-      <button id="update-meds-btn" type="button" class="btn btn-primary form-control">Update Meds</button><br />
     </div>
+    <div class="container mt50">
 
+      <h2>EHR Demo Page</h2>
+
+      <p>Edna Gartner</p>
+      <form>
+        <h4>Dispense Prescription</h4>
+
+        <div class="form-group">
+          <select class="form-control" id="prescriptions" name="prescriptions">
+            <option></option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <button id="dispense-meds-btn" name="dispense-meds-btn" type="button" class="btn btn-primary form-control">Dispense Meds</button><br />
+        </div>
+      </form>
+    </div>
   </body>
   <script src="assets/js/jquery-2.1.4.min.js"></script>
+  <script src="assets/js/jquery.cookie.js"></script>
   <script>
+
     $(document).ready(function(){
+
+
       $("#update-meds-btn").click(function() {
-        console.log("button pressed");
+        console.log("Update Meds button pressed");
+        messageText = $('#rx').val() + "; " +
+        $('#dose').val() + " " + $('#dosetype').val() + " " + $('#freq').val() + "; " +
+        $('#qty').val() + " " + $('#qtytype').val() + "; " +
+        $('#instructions').val() + " ";
+        console.log(messageText);
+
+        if (!!$.cookie('smsPassword')) {
+          //smsPassword saved
+          var smsPassword = $.cookie("smsPassword");
+        } else {
+          //smsPassword not saved
+          var smsPassword = prompt("Please enter the SMS Password");
+        }
+
+        $('#prescriptions').append('<option>'+messageText+'</option>');
+
+
+        // if (patient == null) {
+        //   console.log("test null");
+        // } else {
+        //   console.log(JSON.stringify(patient));
+        //   console.log(patient.phn);
+        //   console.log(patient.email);
+        // }
+        //
+        // $.cookie("patientContext", JSON.stringify(response), { expires: 7, path: '/' });
+
+      //   $.ajax({
+      //     type: "POST",
+      //     url: 'sms',
+      //     data: {
+      //       smspassword: smsPassword,
+      //       phone: '7788386640',
+      //       message: 'Update Meds Test'
+      //     },
+      //     success: function(response) {
+      //       $.cookie("smsPassword", smsPassword, { expires: 7, path: '/' });
+      //       $('#prescriptions').append('<option value="test" selected="selected">Test</option>');
+      //     },
+      //     error: function(response) {
+      //       alert('Error: ' + response);
+      //       $.removeCookie("smsPassword");
+      //     }
+      //   });
       });
+
+      $("#dispense-meds-btn").click(function() {
+        console.log("Dispense Meds button pressed");
+        if (!!$.cookie('smsPassword')) {
+          //smsPassword saved
+          var smsPassword = $.cookie("smsPassword");
+        } else {
+          //smsPassword not saved
+          var smsPassword = prompt("Please enter the SMS Password");
+        }
+
+        $.ajax({
+          type: "POST",
+          url: 'sms',
+          data: {
+            smspassword: smsPassword,
+            phone: '7788386640',
+            message: 'Dispense Meds Test'
+          },
+          success: function(response) {
+            $.cookie("smsPassword", smsPassword, { expires: 7, path: '/' });
+          },
+          error: function(response) {
+            alert('Error');
+            $.removeCookie("smsPassword");
+          }
+        });
+      });
+
     });
+
+      //
+      // $("form").submit(function( event ) {
+      //   formArray = $(this).serializeArray();
+      //   var formObject = {};
+      //   $.each(formArray,
+      //     function(i, v) {
+      //       formObject[v.name] = v.value;
+      //     });
+      //
+      //   $.ajax({
+      //     type: "POST",
+      //     url: 'contactform',
+      //     data: formObject,
+      //     success: function(response) {
+      //       //
+      //     },
+      //     error: function(response) {
+      //       alert('Error');
+      //     }
+      //   });
+      //   event.preventDefault();
+
+
   </script>
 </html>
